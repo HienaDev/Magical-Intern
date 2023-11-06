@@ -47,7 +47,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void SelectInventorySlot(int index)
     {
-        if (index |= _selectedSlot)
+        if (index != _selectedSlot)
         {
             _selectedSlot = index;
             _uiManager.SelectInventorySlot(index);
