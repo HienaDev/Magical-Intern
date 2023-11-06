@@ -46,6 +46,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void ClearCurrentInteractive()
     {
+        _currentInteractive.SetOutline(false);
         _currentInteractive = null;
         _uiManager.HideInteractionPanel();
     }
@@ -56,6 +57,9 @@ public class PlayerInteraction : MonoBehaviour
         _refreshCurrentInteractive  = false;
 
         string interactionMessage = interactive.GetInteractionMessage();
+
+        if (_currentInteractive != null)
+            _currentInteractive.SetOutline(true);
 
         if (interactionMessage != null && interactionMessage.Length > 0)
             _uiManager.ShowInteractionPanel(interactionMessage);
