@@ -26,7 +26,10 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward,
             out RaycastHit hitInfo, _maxInteractionDistance))
+        { 
             CheckObjectForInteraction(hitInfo.collider);
+            Debug.Log(hitInfo.collider.gameObject.name);
+        }
         else if (_currentInteractive != null)
             ClearCurrentInteractive();
     }
