@@ -53,6 +53,9 @@ public class PlayerInteraction : MonoBehaviour
 
     private void SetCurrentInteractive(Interactive interactive)
     {
+        if (_currentInteractive != null)
+            _currentInteractive.SetOutline(false);
+            
         _currentInteractive         = interactive;
         _refreshCurrentInteractive  = false;
 
