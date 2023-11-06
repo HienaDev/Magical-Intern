@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [SerializeField] private UIManager _uiManager;
+    [SerializeField] private UIManager         _uiManager;
 
+    private PlayerInteraction   _playerInteraction;
     private List<Interactive>   _inventory;
     private int                 _selectedSlot;
 
     void Start()
     {
-        _inventory      = new List<Interactive>();
-        _selectedSlot   = -1;
+        _playerInteraction  = GetComponent<PlayerInteraction>();
+        _inventory          = new List<Interactive>();
+        _selectedSlot       = -1;
     }
 
     public void Add(Interactive item)
@@ -45,8 +47,12 @@ public class PlayerInventory : MonoBehaviour
 
     private void SelectInventorySlot(int index)
     {
-        _selectedSlot = index;
-        _uiManager.SelectInventorySlot(index);
+        if (index |= _selectedSlot)
+        {
+            _selectedSlot = index;
+            _uiManager.SelectInventorySlot(index);
+            _playerInteraction.ForceRefreshCurrentInteractive();
+        }
     }
 
     public string GetSelectedInteractionMessage()

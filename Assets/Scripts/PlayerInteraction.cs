@@ -71,4 +71,9 @@ public class PlayerInteraction : MonoBehaviour
             _refreshCurrentInteractive = true;
         }
     }
+
+    public void ForceRefreshCurrentInteractive()
+    {
+        _refreshCurrentInteractive = true;
+    }
 }

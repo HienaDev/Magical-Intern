@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Interactive : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Interactive : MonoBehaviour
     private int                 _interactionCount;
     
     public bool isOn;
+    public UnityEvent onPicked;
+    public UnityEvent onRequirementsMet;
+    public UnityEvent onInteracted;
 
     public InteractiveData interactiveData
     {
@@ -102,6 +106,7 @@ public class Interactive : MonoBehaviour
         {
             _playerInventory.Add(this);
             gameObject.SetActive(false);
+            onPicked.Invoke();
         }
         else if (IsType(InteractiveData.Type.InteractOnce) || IsType(InteractiveData.Type.InteractMulti))
         {
@@ -111,7 +116,13 @@ public class Interactive : MonoBehaviour
 
             if (IsType(InteractiveData.Type.InteractOnce))
                 isOn = false;
+            
         }
+
+        if(IsType(InteractiveData.Type.Pickable))
+            onPicked.Invoke();
+        else
+            onInteracted.Invoke();
 
         if (_animator != null && !IsType(InteractiveData.Type.Pickable))
             _animator.SetTrigger("Interact");
@@ -136,6 +147,7 @@ public class Interactive : MonoBehaviour
         }
 
         _requirementsMet = true;
+        onRequirementsMet.Invoke();
 
         if (_animator != null)
             _animator.SetTrigger("RequirementsMet");
