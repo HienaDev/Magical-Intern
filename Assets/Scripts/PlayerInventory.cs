@@ -77,9 +77,10 @@ public class PlayerInventory : MonoBehaviour
 
     private void CheckForPlayerSlotSelection()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
-            SelectInventorySlot((_selectedSlot + 1) % _inventory.Count);
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-            SelectInventorySlot((_selectedSlot - 1 + _inventory.Count) % _inventory.Count);
+        if (_inventory.Count != 0)
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+                SelectInventorySlot((_selectedSlot + 1) % _inventory.Count);
+            else if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+                SelectInventorySlot((_selectedSlot - 1 + _inventory.Count) % _inventory.Count);
     }
 }
