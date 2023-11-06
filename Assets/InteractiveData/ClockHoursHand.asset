@@ -18,5 +18,4 @@ MonoBehaviour:
   inventoryIcon: {fileID: 0}
   requirements: []
   requirementsMessage: 
-  interactionMessages:
-  - Rotate the second hand
+  interactionMessages: []
