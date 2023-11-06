@@ -11,6 +11,7 @@ public class Interactive : MonoBehaviour
     private List<Interactive>   _requirements;
     private List<Interactive>   _dependents;
     private Animator            _animator;
+    private Outline             _outline;
     private bool                _requirementsMet;
     private int                 _interactionCount;
     
@@ -46,6 +47,7 @@ public class Interactive : MonoBehaviour
         _requirements       = new List<Interactive>();
         _dependents         = new List<Interactive>();
         _animator           = GetComponent<Animator>();
+        _outline            = GetComponent<Outline>();
         _requirementsMet    = _interactiveData.requirements.Length == 0;
         _interactionCount   = 0;
 
@@ -177,5 +179,11 @@ public class Interactive : MonoBehaviour
         }
 
         CheckRequirements();
+    }
+
+    public void SetOutline(bool enabled)
+    {
+        if (_outline != null)
+            _outline.enabled = enabled;
     }
 }

@@ -9814,7 +9814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactiveData: {fileID: 11400000, guid: c7d739f5b6d89da4eb7aeb8afe341124, type: 2}
-  isOn: 0
+  isOn: 1
   onPicked:
     m_PersistentCalls:
       m_Calls: []
