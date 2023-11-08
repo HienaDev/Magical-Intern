@@ -186,4 +186,10 @@ public class Interactive : MonoBehaviour
         if (_outline != null)
             _outline.enabled = enabled;
     }
+
+    public int GetInteractionCount() => _interactionCount;
+
+    public bool GetReqsMet() => _requirementsMet;
+
+    public void SetRequirementsMet(bool toggle) => _requirementsMet = toggle;
 }
