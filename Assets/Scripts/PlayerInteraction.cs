@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
             out RaycastHit hitInfo, _maxInteractionDistance))
         { 
             CheckObjectForInteraction(hitInfo.collider);
-            Debug.Log(hitInfo.collider.gameObject.name);
+            //Debug.Log(hitInfo.collider.gameObject.name); Displays on console what object we're looking at
         }
         else if (_currentInteractive != null)
             ClearCurrentInteractive();
