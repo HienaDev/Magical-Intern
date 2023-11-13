@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.105476655, g: 0.1226482, b: 0.3390653, a: 1}
+  m_IndirectSpecularColor: {r: 0.10554034, g: 0.12274092, b: 0.33915472, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -670,6 +670,7 @@ MonoBehaviour:
   _glasses: {fileID: 1431681649}
   _playerInventory: {fileID: 169860001}
   _magicalVisionPanel: {fileID: 126978251}
+  _clueSequence: {fileID: 137862135}
 --- !u!1001 &177238146
 PrefabInstance:
   m_ObjectHideFlags: 0
