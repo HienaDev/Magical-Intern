@@ -3,7 +3,22 @@ guid: cd37f4834be557f49997d41477d8e876
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CompassGlass_MAT
+    second: {fileID: 2100000, guid: cf9b45c544c48644ba3d1a7ae02da065, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GunKnife_MAT
+    second: {fileID: 2100000, guid: aafc5e0e1439e504db0a80464f179506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_MAT
+    second: {fileID: 2100000, guid: 8eba71a678dedb441bd2fecbd5cbbf35, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -32,7 +47,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
