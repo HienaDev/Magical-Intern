@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.10554034, g: 0.12274092, b: 0.33915472, a: 1}
+  m_IndirectSpecularColor: {r: 0.10547388, g: 0.12265556, b: 0.33906907, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1411,7 +1411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54bb431082549414ca78688b9fe5c521, type: 3}
       propertyPath: m_Name
-      value: food_ingredient_carrot_pieces
+      value: Carrot Pieces
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1803,7 +1803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 919b6398569431a459898130feb32002, type: 3}
       propertyPath: m_Name
-      value: food_ingredient_lettuce
+      value: Lettuce
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3925,7 +3925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 739b1f3aea8b697439e81d6b03f4574e, type: 3}
       propertyPath: m_Name
-      value: food_stew
+      value: Stew bowl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4832,7 +4832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6de46d1a9d79d514caa665baf634de54, type: 3}
       propertyPath: m_Name
-      value: stew_bowl
+      value: Stew
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6463,7 +6463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 15816f57c81c49a4385a6913ca547416, type: 3}
       propertyPath: m_Name
-      value: food_ingredient_steak
+      value: Steak
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7374,7 +7374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a19f3bf3884a14e44823a24827cc57e8, type: 3}
       propertyPath: m_Name
-      value: food_ingredient_cheese
+      value: Cheese
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8048,7 +8048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 10933c7a18a105a4db9419ae7334a0d4, type: 3}
       propertyPath: m_Name
-      value: food_vegetableburger
+      value: Burger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9201,7 +9201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3c466cbb3d7d59f4a94d17119ecd7099, type: 3}
       propertyPath: m_Name
-      value: food_dinner
+      value: Chicken leg
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
