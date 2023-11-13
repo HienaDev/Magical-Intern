@@ -4415,6 +4415,11 @@ Transform:
   - {fileID: 803063709}
   m_Father: {fileID: 465224014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &846800189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4552759320341458404, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+  m_PrefabInstance: {fileID: 5605126095923090632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &848776392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 052ea300c19e5e34eb1f16f6b5c0386a, type: 3}
@@ -11929,6 +11934,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6470059277939996837, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
   m_PrefabInstance: {fileID: 5605126095923090632}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &2000112279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846800189}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 0.4, z: 0.4}
+  m_Center: {x: 0.1, y: 1.9, z: -0.29}
 --- !u!1001 &2007415243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13504,6 +13530,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.096
       objectReference: {fileID: 0}
+    - target: {fileID: 4552759320341458404, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5368959141601185367, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       propertyPath: m_Name
       value: Minute Hand
@@ -13582,6 +13612,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8672277151380819023, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5605126095923090643}
+    - targetCorrespondingSourceObject: {fileID: 4552759320341458404, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2000112279}
     - targetCorrespondingSourceObject: {fileID: 5368959141601185367, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5605126095923090638}
