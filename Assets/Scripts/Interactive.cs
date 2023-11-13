@@ -42,6 +42,7 @@ public class Interactive : MonoBehaviour
 
     void Awake()
     {
+
         _interactionManager = InteractionManager.instance;
         _playerInventory    = _interactionManager.playerInventory;
         _requirements       = new List<Interactive>();
