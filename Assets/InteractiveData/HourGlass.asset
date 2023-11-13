@@ -17,5 +17,5 @@ MonoBehaviour:
   inventoryName: hourglass
   inventoryIcon: {fileID: 0}
   requirements: []
-  requirementsMessage: Pickup
+  requirementsMessage: Pick up
   interactionMessages: []
