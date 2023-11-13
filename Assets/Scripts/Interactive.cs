@@ -42,7 +42,8 @@ public class Interactive : MonoBehaviour
 
     void Awake()
     {
-
+        if(_interactionManager == null)
+        { 
         _interactionManager = InteractionManager.instance;
         _playerInventory    = _interactionManager.playerInventory;
         _requirements       = new List<Interactive>();
@@ -55,6 +56,7 @@ public class Interactive : MonoBehaviour
         isOn = _interactiveData.startsOn;
 
         _interactionManager.RegisterInteractive(this);
+        }
     }
 
     public void AddRequirement(Interactive requirement)
