@@ -1,37 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MagicGlasses : MonoBehaviour
 {
-    private Interactive _glasses;
-    private PlayerInventory _playerInventory;
-    public bool canUseGlasses = false;
-    
-    void Start()
-    {
-        _glasses = GetComponent<Interactive>();
-        _playerInventory = GetComponent<PlayerInventory>();
-    }
+    [SerializeField] private Interactive _glasses;
+    [SerializeField] private PlayerInventory _playerInventory;
+    [SerializeField] private GameObject _magicalVisionPanel;
+
+    private bool canUseGlasses = false;
 
     public void UseGlasses (bool canUse)
     {
         if (canUse)
         {
-            // Check if the player have the glasses selected on the inventory
             if (_playerInventory.IsSelected(_glasses))
             {
-                Debug.Log("You can use the glasses");
+                Debug.Log("Glasses selected");
+                // Activate magical vision
+                _magicalVisionPanel.SetActive(true);
             }
             else
             {
-                Debug.Log("You can't use the glasses");
+                Debug.Log("Glasses not selected");
+                // Deactivate magical vision
+                _magicalVisionPanel.SetActive(false);
             }
         }
         else
         {
             Debug.Log("You can't use the glasses");
         }
+    }
+
+    public void CanUseGlasses()
+    {
+        canUseGlasses = true;
     }
 
     void Update()
