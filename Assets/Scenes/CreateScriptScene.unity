@@ -6040,6 +6040,93 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bf6ce26076db64949adbf11ba0896c0e, type: 3}
   m_PrefabInstance: {fileID: 1290010003}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1299515061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1379968404}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.032999992
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.092
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.17700005
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_Name
+      value: HourGlass
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+--- !u!4 &1299515062 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+  m_PrefabInstance: {fileID: 1299515061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1299515063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cd37f4834be557f49997d41477d8e876, type: 3}
+  m_PrefabInstance: {fileID: 1299515061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1302212241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6691,6 +6778,7 @@ Transform:
   - {fileID: 1139586445}
   - {fileID: 1935392245}
   - {fileID: 597991768}
+  - {fileID: 1299515062}
   m_Father: {fileID: 465224014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1379968405
@@ -6731,17 +6819,17 @@ MonoBehaviour:
   eventOnSolve:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1379968406}
-        m_TargetAssemblyTypeName: CheckBookshelfPuzzle, Assembly-CSharp
-        m_MethodName: TestSolve
-        m_Mode: 1
+      - m_Target: {fileID: 1299515063}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1001 &1385445255
 PrefabInstance:
