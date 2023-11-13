@@ -8,6 +8,7 @@ public class MagicGlasses : MonoBehaviour
     [SerializeField] private Interactive _glasses;
     [SerializeField] private PlayerInventory _playerInventory;
     [SerializeField] private GameObject _magicalVisionPanel;
+    [SerializeField] private GameObject _clueSequence;
 
     private bool canUseGlasses = false;
 
@@ -17,20 +18,18 @@ public class MagicGlasses : MonoBehaviour
         {
             if (_playerInventory.IsSelected(_glasses))
             {
-                Debug.Log("Glasses selected");
-                // Activate magical vision
                 _magicalVisionPanel.SetActive(true);
+                _clueSequence.SetActive(true);
             }
             else
             {
-                Debug.Log("Glasses not selected");
-                // Deactivate magical vision
                 _magicalVisionPanel.SetActive(false);
+                _clueSequence.SetActive(false);
             }
         }
         else
         {
-            Debug.Log("You can't use the glasses");
+            return;
         }
     }
 
