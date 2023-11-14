@@ -7,6 +7,7 @@ public class CountInteractions : MonoBehaviour
 
     private Interactive interactive;
 
+    [SerializeField] private int numberOfInteractions;
     public bool RightPosition { get; private set; }
 
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class CountInteractions : MonoBehaviour
 
     public void CheckReqs()
     {
-        if (interactive.GetInteractionCount() % 12 == 9)
+        if (interactive.GetInteractionCount() % 12 == numberOfInteractions)
         {
             RightPosition = true;
         }
