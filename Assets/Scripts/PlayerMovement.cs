@@ -1,37 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _forwardAcceleration;
-    [SerializeField] private float _backwardAcceleration;
-    [SerializeField] private float _strafeAcceleration;
-    [SerializeField] private float _gravityAcceleration;
-    [SerializeField] private float _jumpAcceleration;
-    [SerializeField] private float _maxForwardVelocity;
-    [SerializeField] private float _maxBackwardVelocity;
-    [SerializeField] private float _maxStrafeVelocity;
-    [SerializeField] private float _maxFallVelocity;
-    [SerializeField] private float _rotationVelocityFactor;
-    [SerializeField] private float _maxHeadUpAngle;
-    [SerializeField] private float _minHeadDownAngle;
 
-    private CharacterController _controller;
-    private Transform   _head;
-    private Vector3     _acceleration;
-    private Vector3     _velocity;
-    private Vector3     _motion;
-    private bool        _startJump;
-    private float       _sinPI4;
+    [SerializeField] private float horizontalMouseSensitivity;
+    [SerializeField] private float verticalMouseSensitivity;
 
-    void Start()
+    [SerializeField] private float maxHeadUpAngle;
+    [SerializeField] private float minHeadDownAngle;
+
+
+    private CharacterController characterController;
+
+    private Transform head;
+
+    private void Start()
     {
-        _controller     = GetComponent<CharacterController>();
-        _head           = GetComponentInChildren<Camera>().transform;
-        _acceleration   = Vector3.zero;
-        _velocity       = Vector3.zero;
-        _motion         = Vector3.zero;
-        _startJump      = false;
-        _sinPI4         = Mathf.Sin(Mathf.PI / 4);
+        characterController = GetComponent<CharacterController>();
+        head = GetComponentInChildren<Camera>().transform;
 
         HideCursor();
     }
@@ -41,119 +29,61 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    // Update is called once per frame
+    private void Update()
     {
-        UpdateBodyRotation();
-        UpdateHeadRotation();
-        CheckForJump();
+        UpdateRotation();
+
     }
 
-    private void UpdateBodyRotation()
+    private void UpdateRotation()
     {
-        float rotation = Input.GetAxis("Mouse X") * _rotationVelocityFactor;
+        UpdatePlayerRotation();
+        UpdateHeadRotation();
+        Move();
+    }
+
+    private void UpdatePlayerRotation()
+    {
+        float rotation = Input.GetAxis("Mouse X") * horizontalMouseSensitivity;
 
         transform.Rotate(0f, rotation, 0f);
     }
 
     private void UpdateHeadRotation()
     {
-        Vector3 rotation = _head.localEulerAngles;
+        Vector3 rotation = head.localEulerAngles;
 
-        rotation.x -= Input.GetAxis("Mouse Y") * _rotationVelocityFactor;
+        rotation.x -= Input.GetAxis("Mouse Y") * verticalMouseSensitivity;
+
 
         if (rotation.x < 180)
-            rotation.x = Mathf.Min(rotation.x, _maxHeadUpAngle);
+            rotation.x = Mathf.Min(rotation.x, maxHeadUpAngle);
         else
-            rotation.x = Mathf.Max(rotation.x, _minHeadDownAngle);
+            rotation.x = Mathf.Max(rotation.x, minHeadDownAngle);
 
-        _head.localEulerAngles = rotation;
+        head.localEulerAngles = rotation;
+
     }
 
-    private void CheckForJump()
+
+    private void Move()
     {
-        if (Input.GetButtonDown("Jump") && _controller.isGrounded)
-            _startJump = true;
+        float x = Input.GetAxis("Forward") * 5f  * Time.deltaTime;
+        float z = Input.GetAxis("Strafe")  * 5f * Time.deltaTime;
+
+        Vector3 move = transform.right * z + transform.forward * x;
+
+        characterController.Move(move);
     }
 
-    void FixedUpdate()
-    {
-        UpdateAcceleration();
-        UpdateVelocity();
-        UpdatePosition();
-    }
+    //private void FixedUpdate()
+    //{
+    //    float x = Input.GetAxis("Forward") * 0.1f;
+    //    float z = Input.GetAxis("Strafe") * 0.1f;
 
-    private void UpdateAcceleration()
-    {
-        UpdateForwardAcceleration();
-        UpdateStrafeAcceleration();
-        UpdateVerticalAcceleration();
-    }
+    //    Vector3 move = transform.right * z + transform.forward * x;
 
-    private void UpdateForwardAcceleration()
-    {
-        float forwardAxis = Input.GetAxis("Forward");
-
-        if (forwardAxis > 0f)
-            _acceleration.z = _forwardAcceleration;
-        else if (forwardAxis < 0f)
-            _acceleration.z = _backwardAcceleration;
-        else
-            _acceleration.z = 0f;
-    }
-
-    private void UpdateStrafeAcceleration()
-    {
-        float strafeAxis = Input.GetAxis("Strafe");
-
-        if (strafeAxis > 0f)
-            _acceleration.x = _strafeAcceleration;
-        else if (strafeAxis < 0f)
-            _acceleration.x = -_strafeAcceleration;
-        else
-            _acceleration.x = 0f;
-    }
-
-    private void UpdateVerticalAcceleration()
-    {
-        if (_startJump)
-            _acceleration.y = _jumpAcceleration;
-        else
-            _acceleration.y = _gravityAcceleration;
-    }
-
-    private void UpdateVelocity()
-    {
-        _velocity += _acceleration * Time.fixedDeltaTime;
-
-        if (_acceleration.z == 0f || _acceleration.z * _velocity.z < 0f)
-            _velocity.z = 0f;
-        else if (_velocity.x == 0f)
-            _velocity.z = Mathf.Clamp(_velocity.z, _maxBackwardVelocity, _maxForwardVelocity);
-        else
-            _velocity.z = Mathf.Clamp(_velocity.z, _maxBackwardVelocity * _sinPI4, _maxForwardVelocity * _sinPI4);
-       
-        if (_acceleration.x == 0f || _acceleration.x * _velocity.x < 0f)
-            _velocity.x = 0f;
-        else if (_velocity.z == 0f)
-            _velocity.x = Mathf.Clamp(_velocity.x, -_maxStrafeVelocity, _maxStrafeVelocity);
-        else
-            _velocity.x = Mathf.Clamp(_velocity.x, -_maxStrafeVelocity * _sinPI4, _maxStrafeVelocity * _sinPI4);
-
-        if (_controller.isGrounded && !_startJump)
-            _velocity.y = -0.1f;
-        else
-            _velocity.y = Mathf.Max(_velocity.y, _maxFallVelocity);
-
-        _startJump = false;
-    }
-
-    private void UpdatePosition()
-    {
-        _motion = _velocity * Time.fixedDeltaTime;
-
-        _motion = transform.TransformVector(_motion);
-
-        _controller.Move(_motion);
-    }
-
+    //    characterController.Move(move);
+    //}
 }
