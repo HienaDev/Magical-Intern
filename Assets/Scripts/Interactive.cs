@@ -107,11 +107,10 @@ public class Interactive : MonoBehaviour
     {
         if (direct && IsType(InteractiveData.Type.Indirect))
             return;
-        else if (IsType(InteractiveData.Type.Pickable))
+        else if (IsType(InteractiveData.Type.Pickable) && !_playerInventory.IsFull())
         {
             _playerInventory.Add(this);
             gameObject.SetActive(false);
-            onPicked.Invoke();
         }
         else if (IsType(InteractiveData.Type.InteractOnce) || IsType(InteractiveData.Type.InteractMulti))
         {
@@ -124,7 +123,7 @@ public class Interactive : MonoBehaviour
             
         }
 
-        if(IsType(InteractiveData.Type.Pickable))
+        if (IsType(InteractiveData.Type.Pickable))
             onPicked.Invoke();
         else
             onInteracted.Invoke();
