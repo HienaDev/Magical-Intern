@@ -8,8 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI    _interactionMessage;
     [SerializeField] private Image[]            _inventorySlots;
     [SerializeField] private Image[]            _inventoryIcons;
-    [SerializeField] private float              _unselectedAlpha;
-    [SerializeField] private float              _selectedAlpha;
+    [SerializeField] private Color              _unselectedColor;
+    [SerializeField] private Color              _selectedColor;
 
     void Start()
     {
@@ -63,14 +63,14 @@ public class UIManager : MonoBehaviour
         foreach (Image image in _inventorySlots)
         {
             Color color = image.color;
-            color.a     = _unselectedAlpha;
+            color = _unselectedColor;
             image.color = color;
         }
 
         if (index != -1)
         {
             Color color = _inventorySlots[index].color;
-            color.a     = _selectedAlpha;
+            color = _selectedColor;
 
             _inventorySlots[index].color = color;
         }
