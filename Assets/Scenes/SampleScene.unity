@@ -736,11 +736,12 @@ GameObject:
   - component: {fileID: 169859996}
   - component: {fileID: 169859995}
   - component: {fileID: 169859994}
+  - component: {fileID: 169860000}
+  - component: {fileID: 169860003}
   - component: {fileID: 169859997}
   - component: {fileID: 169860002}
   - component: {fileID: 169860001}
-  - component: {fileID: 169860000}
-  - component: {fileID: 169860003}
+  - component: {fileID: 169860004}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -912,6 +913,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &169860004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169859992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f441bd29af86f5b4384c7bd5f4250809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glasses: {fileID: 2785789144713503973, guid: 3845551c88ae6df4b8d4855aec8c49df, type: 3}
+  _chessPiece: {fileID: 7790895171187744254, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
+  _cheese: {fileID: 1658163455}
+  _hourglass: {fileID: 1002742630}
 --- !u!1001 &177238146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3297,6 +3314,7 @@ MonoBehaviour:
   _playerInventory: {fileID: 169860001}
   _magicalVisionPanel: {fileID: 126978251}
   _clueSequence: {fileID: 137862135}
+  _glassesData: {fileID: 11400000, guid: 6900f727898049e4e8d6a8cfe9ae1d2c, type: 2}
 --- !u!1 &531882733
 GameObject:
   m_ObjectHideFlags: 0
@@ -15535,7 +15553,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -24.590858, y: 5.4968243, z: -24.882965, w: 6.0975704}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15674,9 +15692,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3929623444121718279, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: m_Name
+      value: bird hitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114424474180175250, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: m_Name
+      value: Pier
+      objectReference: {fileID: 0}
     - target: {fileID: 6470059277939996837, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170318310750135578, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: m_Name
+      value: peak
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992055836605792586, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: m_Name
+      value: wings
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127158040540045226, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: m_Name
+      value: pole
       objectReference: {fileID: 0}
     - target: {fileID: 8672277151380819023, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       propertyPath: m_Name
