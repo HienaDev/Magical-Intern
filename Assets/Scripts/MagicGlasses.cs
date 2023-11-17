@@ -9,6 +9,7 @@ public class MagicGlasses : MonoBehaviour
     [SerializeField] private PlayerInventory _playerInventory;
     [SerializeField] private GameObject _magicalVisionPanel;
     [SerializeField] private GameObject _clueSequence;
+    [SerializeField] private InteractiveData _glassesData;
 
     private bool canUseGlasses = false;
 
@@ -36,6 +37,7 @@ public class MagicGlasses : MonoBehaviour
     public void CanUseGlasses()
     {
         canUseGlasses = true;
+        _glassesData.inventoryName = "magical glasses";
     }
 
     void Update()
