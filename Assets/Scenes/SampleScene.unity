@@ -739,7 +739,6 @@ GameObject:
   - component: {fileID: 169859997}
   - component: {fileID: 169860002}
   - component: {fileID: 169860001}
-  - component: {fileID: 169860004}
   - component: {fileID: 169860000}
   - component: {fileID: 169860003}
   m_Layer: 2
@@ -913,22 +912,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &169860004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169859992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432a431ca1df1524ba0ca1437bd3c8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _glasses: {fileID: 1431681649}
-  _playerInventory: {fileID: 169860001}
-  _magicalVisionPanel: {fileID: 126978251}
-  _clueSequence: {fileID: 137862135}
 --- !u!1001 &177238146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3184,9 +3167,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 524050824}
+  - component: {fileID: 524050821}
   - component: {fileID: 524050823}
   - component: {fileID: 524050822}
-  - component: {fileID: 524050821}
+  - component: {fileID: 524050825}
   m_Layer: 0
   m_Name: Magical Powder
   m_TagString: Untagged
@@ -3247,7 +3231,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 169860004}
+      - m_Target: {fileID: 524050825}
         m_TargetAssemblyTypeName: MagicGlasses, Assembly-CSharp
         m_MethodName: CanUseGlasses
         m_Mode: 1
@@ -3297,6 +3281,22 @@ Transform:
   - {fileID: 1913913238}
   m_Father: {fileID: 465224014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &524050825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524050820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 432a431ca1df1524ba0ca1437bd3c8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _glasses: {fileID: 1431681649}
+  _playerInventory: {fileID: 169860001}
+  _magicalVisionPanel: {fileID: 126978251}
+  _clueSequence: {fileID: 137862135}
 --- !u!1 &531882733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,13 +4275,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d3640442a7f4d4b96c2aeaa8407f95, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 982964367}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d3640442a7f4d4b96c2aeaa8407f95, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 982964365}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d3640442a7f4d4b96c2aeaa8407f95, type: 3}
       insertIndex: -1
       addedObject: {fileID: 982964368}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d3640442a7f4d4b96c2aeaa8407f95, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 982964367}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d3640442a7f4d4b96c2aeaa8407f95, type: 3}
       insertIndex: -1
       addedObject: {fileID: 982964370}
