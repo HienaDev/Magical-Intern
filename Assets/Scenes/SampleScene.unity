@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.105476655, g: 0.1226482, b: 0.3390653, a: 1}
+  m_IndirectSpecularColor: {r: 0.10548376, g: 0.122673504, b: 0.33907437, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6649,10 +6649,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chess Piece (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7790895171187744254, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.8723297
@@ -10127,41 +10123,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chess Piece (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 7790895171187744254, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.0283103
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.43314
+      value: 1.632
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.4
+      value: -5.1121
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.34819606
+      value: -0.010781144
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.6154344
+      value: -0.7070246
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6154344
+      value: 0.7070246
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.34819606
+      value: -0.010781144
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -121
+      value: -181.747
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -10368,13 +10360,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a19f3bf3884a14e44823a24827cc57e8, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1658163461}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a19f3bf3884a14e44823a24827cc57e8, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1658163456}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a19f3bf3884a14e44823a24827cc57e8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1658163457}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a19f3bf3884a14e44823a24827cc57e8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1658163461}
   m_SourcePrefab: {fileID: 100100000, guid: a19f3bf3884a14e44823a24827cc57e8, type: 3}
 --- !u!1 &1658163455 stripped
 GameObject:
@@ -10444,7 +10436,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.3903562, y: 0.5, z: 1.0636617}
   m_Center: {x: -0.06913452, y: 0.25, z: 0.04561109}
