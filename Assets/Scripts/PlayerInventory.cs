@@ -23,6 +23,7 @@ public class PlayerInventory : MonoBehaviour
         _inventory.Add(item);
 
         _uiManager.ShowInventoryIcon(_inventory.Count - 1, item.inventoryIcon);
+        _uiManager.ShowInventorySlot(_inventory.Count - 1);
 
         if (_inventory.Count == 1)
             SelectInventorySlot(0);
@@ -33,9 +34,13 @@ public class PlayerInventory : MonoBehaviour
         _inventory.Remove(item);
 
         _uiManager.HideInventoryIcons();
+        _uiManager.HideInventorySlots();
 
         for (int i = 0; i < _inventory.Count; ++i)
+        {
             _uiManager.ShowInventoryIcon(i, _inventory[i].inventoryIcon);
+            _uiManager.ShowInventorySlot(i);
+        }
 
         if (_selectedSlot == _inventory.Count)
             SelectInventorySlot(_selectedSlot - 1);
@@ -84,7 +89,7 @@ public class PlayerInventory : MonoBehaviour
     private void CheckForPlayerSlotSelection()
     {
         if (_inventory.Count != 0)
-            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f)    
                 SelectInventorySlot((_selectedSlot + 1) % _inventory.Count);
             else if (Input.GetAxis("Mouse ScrollWheel") > 0f)
                 SelectInventorySlot((_selectedSlot - 1 + _inventory.Count) % _inventory.Count);

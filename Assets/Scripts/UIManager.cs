@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     {
         HideInteractionPanel();
         HideInventoryIcons();
+        HideInventorySlots();
         SelectInventorySlot(-1);
     }
 
@@ -40,10 +41,21 @@ public class UIManager : MonoBehaviour
             image.enabled = false;
     }
 
+    public void HideInventorySlots()
+    {
+        foreach (Image image in _inventorySlots)
+            image.enabled = false;
+    }
+
     public void ShowInventoryIcon(int index, Sprite icon)
     {
         _inventoryIcons[index].sprite   = icon;
         _inventoryIcons[index].enabled  = true;
+    }
+
+    public void ShowInventorySlot(int index)
+    {
+        _inventorySlots[index].enabled = true;
     }
 
     public void SelectInventorySlot(int index)
