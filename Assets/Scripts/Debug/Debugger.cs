@@ -1,17 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Debugger : MonoBehaviour
 {
-    private PlayerInventory _playerInventory;
     [SerializeField] private UseInventoryItems _magicGlassesScriptReference;
-    [SerializeField] private GameObject _glasses;
-    [SerializeField] private GameObject _chessPiece;
-    [SerializeField] private GameObject _cheese;
-    [SerializeField] private GameObject _hourglass;
-    [SerializeField] private GameObject _key;
-    [SerializeField] private GameObject _memoryPotion;
+    [SerializeField] private GameObject        _glasses;
+    [SerializeField] private GameObject        _chessPiece;
+    [SerializeField] private GameObject        _cheese;
+    [SerializeField] private GameObject        _hourglass;
+    [SerializeField] private GameObject        _key;
+    [SerializeField] private GameObject        _memoryPotion;
+
+    private PlayerInventory _playerInventory;
 
     private void Start()
     {
