@@ -53,7 +53,7 @@ public class UseInventoryItems : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (_playerInventory.IsSelected(_memoryPotion))
                 UseMemoryPotion();
