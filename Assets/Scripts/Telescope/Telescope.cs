@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Telescope : MonoBehaviour
 {
-    [SerializeField] private GameObject _telescopeVision;
+    [SerializeField] private GameObject     _telescopeVision;
     [SerializeField] private PlayerMovement _playerMovement;
 
     private bool _isWatching = false;
