@@ -1,25 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private float _horizontalMouseSensitivity;
+    [SerializeField] private float _verticalMouseSensitivity;
+    [SerializeField] private float _maxHeadUpAngle;
+    [SerializeField] private float _minHeadDownAngle;
 
-    [SerializeField] private float horizontalMouseSensitivity;
-    [SerializeField] private float verticalMouseSensitivity;
-
-    [SerializeField] private float maxHeadUpAngle;
-    [SerializeField] private float minHeadDownAngle;
-
-
-    private CharacterController characterController;
-
-    private Transform head;
+    private CharacterController _characterController;
+    private Transform           _head;
 
     private void Start()
     {
-        characterController = GetComponent<CharacterController>();
-        head = GetComponentInChildren<Camera>().transform;
+        _characterController = GetComponent<CharacterController>();
+        _head = GetComponentInChildren<Camera>().transform;
 
         HideCursor();
     }
@@ -33,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         UpdateRotation();
-
     }
 
     private void UpdateRotation()
@@ -45,27 +38,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdatePlayerRotation()
     {
-        float rotation = Input.GetAxis("Mouse X") * horizontalMouseSensitivity;
+        float rotation = Input.GetAxis("Mouse X") * _horizontalMouseSensitivity;
 
         transform.Rotate(0f, rotation, 0f);
     }
 
     private void UpdateHeadRotation()
     {
-        Vector3 rotation = head.localEulerAngles;
+        Vector3 rotation = _head.localEulerAngles;
 
-        rotation.x -= Input.GetAxis("Mouse Y") * verticalMouseSensitivity;
-
+        rotation.x -= Input.GetAxis("Mouse Y") * _verticalMouseSensitivity;
 
         if (rotation.x < 180)
-            rotation.x = Mathf.Min(rotation.x, maxHeadUpAngle);
+            rotation.x = Mathf.Min(rotation.x, _maxHeadUpAngle);
         else
-            rotation.x = Mathf.Max(rotation.x, minHeadDownAngle);
+            rotation.x = Mathf.Max(rotation.x, _minHeadDownAngle);
 
-        head.localEulerAngles = rotation;
-
+        _head.localEulerAngles = rotation;
     }
-
 
     private void Move()
     {
@@ -74,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * z + transform.forward * x;
 
-        characterController.Move(move);
+        _characterController.Move(move);
     }
 
     //private void FixedUpdate()
@@ -84,6 +74,6 @@ public class PlayerMovement : MonoBehaviour
 
     //    Vector3 move = transform.right * z + transform.forward * x;
 
-    //    characterController.Move(move);
+    //    _characterController.Move(move);
     //}
 }
