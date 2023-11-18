@@ -34,8 +34,7 @@ public class AnimateBooks : MonoBehaviour
             _selected = false;
         }
 
-        Debug.Log("aux: " + _auxPosition + " final " + _finalPosition);
-
+       
         transform.localPosition = _auxPosition;
     }
 
