@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DisableObjects : MonoBehaviour
@@ -12,6 +10,4 @@ public class DisableObjects : MonoBehaviour
             g.SetActive(false);
         }
     }
-
-
 }
