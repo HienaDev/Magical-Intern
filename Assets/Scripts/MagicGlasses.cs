@@ -17,16 +17,12 @@ public class MagicGlasses : MonoBehaviour
     {
         if (canUse)
         {
-            if (_playerInventory.IsSelected(_glasses))
+            if (_playerInventory.IsSelected(_glasses) && Input.GetKeyDown(KeyCode.E))
             {
-                _magicalVisionPanel.SetActive(true);
-                _clueSequence.SetActive(true);
+                _magicalVisionPanel.SetActive(!_magicalVisionPanel.activeSelf);
+                _clueSequence.SetActive(!_magicalVisionPanel.activeSelf);
             }
-            else
-            {
-                _magicalVisionPanel.SetActive(false);
-                _clueSequence.SetActive(false);
-            }
+
         }
         else
         {

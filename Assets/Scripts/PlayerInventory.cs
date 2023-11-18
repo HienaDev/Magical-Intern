@@ -48,7 +48,12 @@ public class PlayerInventory : MonoBehaviour
 
     public bool Contains(Interactive item)
     {
-        return _inventory.Contains(item);
+        foreach(Interactive i in _inventory)
+        {
+            if (i == item)
+                return true;
+        }
+        return false;
     }
 
     public bool IsFull()
@@ -73,6 +78,7 @@ public class PlayerInventory : MonoBehaviour
 
     public bool IsSelected(Interactive item)
     {
+
         return _selectedSlot != -1 && _inventory[_selectedSlot] == item;
     }
 
@@ -89,9 +95,9 @@ public class PlayerInventory : MonoBehaviour
     private void CheckForPlayerSlotSelection()
     {
         if (_inventory.Count != 0)
-            if (Input.GetAxis("Mouse ScrollWheel") < 0f)    
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f)    
                 SelectInventorySlot((_selectedSlot + 1) % _inventory.Count);
-            else if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
                 SelectInventorySlot((_selectedSlot - 1 + _inventory.Count) % _inventory.Count);
     }
 }

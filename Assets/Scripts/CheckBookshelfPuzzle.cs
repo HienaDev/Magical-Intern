@@ -7,26 +7,27 @@ using UnityEngine.Events;
 public class CheckBookshelfPuzzle : MonoBehaviour
 {
 
-    [HideInInspector] public int[] bookOrder;
-    [SerializeField] private int[] rightBookOrder;
+    [HideInInspector] public int[] _bookOrder;
+    [SerializeField] private int[] _rightBookOrder;
 
-    [SerializeField] private UnityEvent eventOnSolve;
+    [SerializeField] private UnityEvent _eventOnSolve;
 
+    private bool _solved = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        bookOrder = new int[] {1, 2, 3, 4, 5};
+        _bookOrder = new int[] {1, 2, 3, 4, 5};
     }
 
     public void CheckPuzzle()
     {
         
    
-        if (Enumerable.SequenceEqual(bookOrder, rightBookOrder))
+        if (Enumerable.SequenceEqual(_bookOrder, _rightBookOrder) && !_solved)
         {
-            
-            eventOnSolve.Invoke();
+            _solved = true;
+            _eventOnSolve.Invoke();
         }
     }
 
@@ -37,23 +38,23 @@ public class CheckBookshelfPuzzle : MonoBehaviour
         int index1 = 0;
         int index2 = 0;
 
-        for (int i = 0; i < bookOrder.Length; i++)
+        for (int i = 0; i < _bookOrder.Length; i++)
         {
-            if (bookOrder[i] == p1)
+            if (_bookOrder[i] == p1)
             {
                 index1 = i;
 
             }
-            if (bookOrder[i] == p2)
+            if (_bookOrder[i] == p2)
             {
                 index2 = i;
             }
 
         }
 
-        int temp = bookOrder[index1];
-        bookOrder[index1] = bookOrder[index2];
-        bookOrder[index2] = temp;
+        int temp = _bookOrder[index1];
+        _bookOrder[index1] = _bookOrder[index2];
+        _bookOrder[index2] = temp;
 
 
     }

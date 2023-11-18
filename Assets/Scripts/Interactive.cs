@@ -194,4 +194,5 @@ public class Interactive : MonoBehaviour
     public bool GetReqsMet() => _requirementsMet;
 
     public void SetRequirementsMet(bool toggle) => _requirementsMet = toggle;
+
 }
