@@ -1,40 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwapBooks : MonoBehaviour
 {
-    private GameObject tempBook;
-
-    private CheckBookshelfPuzzle bookshelfScript;
-
+    private GameObject           _tempBook;
+    private CheckBookshelfPuzzle _bookshelfScript;
 
     private void Start()
     {
-        bookshelfScript = GetComponentInParent<CheckBookshelfPuzzle>();
+        _bookshelfScript = GetComponentInParent<CheckBookshelfPuzzle>();
     }
 
     public void SwapBooksPosition(GameObject book)
     {
-        if (tempBook == null)
+        if (_tempBook == null)
         {
-            tempBook = book;
+            _tempBook = book;
             book.GetComponent<AnimateBooks>().BookSelect();
         }
         else
         {
-            
+            _tempBook.GetComponent<AnimateBooks>().Swapped(book.transform);
+            book.GetComponent<AnimateBooks>().Swapped(_tempBook.transform);
 
-            tempBook.GetComponent<AnimateBooks>().Swapped(book.transform);
-            book.GetComponent<AnimateBooks>().Swapped(tempBook.transform);
-
-            bookshelfScript.SwapBookOrder(
-                tempBook.GetComponent<CheckBookPosition>().BookPosition, 
+            _bookshelfScript.SwapBookOrder(
+                _tempBook.GetComponent<CheckBookPosition>().BookPosition, 
                 book.GetComponent<CheckBookPosition>().BookPosition);
 
             
 
-            tempBook = null;
+            _tempBook = null;
         }
     }
 }

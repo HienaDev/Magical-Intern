@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,11 +5,9 @@ using UnityEngine.Events;
 public class CheckBookshelfPuzzle : MonoBehaviour
 {
 
-    [HideInInspector] public int[] _bookOrder;
-    [SerializeField] private int[] _rightBookOrder;
-
+    [HideInInspector] public int[]      _bookOrder;
+    [SerializeField] private int[]      _rightBookOrder;
     [SerializeField] private UnityEvent _eventOnSolve;
-
     private bool _solved = false;
 
     // Start is called before the first frame update
@@ -22,8 +18,6 @@ public class CheckBookshelfPuzzle : MonoBehaviour
 
     public void CheckPuzzle()
     {
-        
-   
         if (Enumerable.SequenceEqual(_bookOrder, _rightBookOrder) && !_solved)
         {
             _solved = true;
@@ -34,7 +28,6 @@ public class CheckBookshelfPuzzle : MonoBehaviour
 
     public void SwapBookOrder(int p1, int p2)
     {
-
         int index1 = 0;
         int index2 = 0;
 
@@ -55,7 +48,5 @@ public class CheckBookshelfPuzzle : MonoBehaviour
         int temp = _bookOrder[index1];
         _bookOrder[index1] = _bookOrder[index2];
         _bookOrder[index2] = temp;
-
-
     }
 }

@@ -1,19 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using TreeEditor;
 using UnityEngine;
 
 public class AnimateBooks : MonoBehaviour
 {
 
-    private bool _selected = false;
-    [SerializeField] private float _movementIncrement;
-    
-    [SerializeField] private float _finalPosition;
-    private float _initialPosition;
-
-
+    private bool    _selected = false;
+    private float   _initialPosition;
     private Vector3 _auxPosition;
+    [SerializeField] private float _movementIncrement;
+    [SerializeField] private float _finalPosition;
 
     private void Start()
     {
