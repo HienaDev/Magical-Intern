@@ -481,6 +481,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1422888150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &115417393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+  m_PrefabInstance: {fileID: 708879712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &115417394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115417393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc17a168097c2a42b08d13605604980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactiveData: {fileID: 11400000, guid: 57906d6f2b0d28b4f84d2d674522b0df, type: 2}
+  _outlineAlwaysOn: 0
+  isOn: 1
+  onPicked:
+    m_PersistentCalls:
+      m_Calls: []
+  onRequirementsMet:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteracted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &115417395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115417393}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8956595, y: 0.40287903, z: 0.14180309}
+  m_Center: {x: -0.25286654, y: -0.0000007301569, z: 0.000000018626451}
+--- !u!114 &115417399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115417393}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.97001815, b: 0, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &126978251
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +896,7 @@ MonoBehaviour:
   _chessPiece: {fileID: 1698202606}
   _cheese: {fileID: 1658163455}
   _hourglass: {fileID: 1002742630}
+  _memoryPotion: {fileID: 325795168}
 --- !u!1 &174538420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,33 +2014,9 @@ MonoBehaviour:
   onInteracted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1593405224}
+      - m_Target: {fileID: 270559752}
         m_TargetAssemblyTypeName: CheckChessPieces, Assembly-CSharp
         m_MethodName: CheckCorrectPiece
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 270559748}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 270559756}
-        m_TargetAssemblyTypeName: ChangePieceMaterial, Assembly-CSharp
-        m_MethodName: ChangeMaterial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1995,19 +2040,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 169860001}
   _chessPiece: {fileID: 7790895171187744254, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
---- !u!114 &270559756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270559744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8291ca7d2139f814594bdf2a7f2d52d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2099842886043274308, guid: 9676c006415629a44893f719293727df, type: 3}
+  _material: {fileID: 2099842886043274308, guid: 9676c006415629a44893f719293727df, type: 3}
+  _rightPiece:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1650255237}
+        m_TargetAssemblyTypeName: CheckChessPuzzle, Assembly-CSharp
+        m_MethodName: CheckPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &278938080 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 15816f57c81c49a4385a6913ca547416, type: 3}
@@ -5680,33 +5728,9 @@ MonoBehaviour:
   onInteracted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1593405224}
+      - m_Target: {fileID: 701955669}
         m_TargetAssemblyTypeName: CheckChessPieces, Assembly-CSharp
         m_MethodName: CheckCorrectPiece
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 701955665}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 701955673}
-        m_TargetAssemblyTypeName: ChangePieceMaterial, Assembly-CSharp
-        m_MethodName: ChangeMaterial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5730,19 +5754,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 169860001}
   _chessPiece: {fileID: 7790895171187744254, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
---- !u!114 &701955673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701955661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8291ca7d2139f814594bdf2a7f2d52d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2099842886043274308, guid: 9676c006415629a44893f719293727df, type: 3}
+  _material: {fileID: 2099842886043274308, guid: 9676c006415629a44893f719293727df, type: 3}
+  _rightPiece:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1650255237}
+        m_TargetAssemblyTypeName: CheckChessPuzzle, Assembly-CSharp
+        m_MethodName: CheckPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &702695819
 GameObject:
   m_ObjectHideFlags: 0
@@ -5870,6 +5897,88 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 32.879, y: -8.244, z: 4.892}
+--- !u!1001 &708879712
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.56
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.099999905
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.91
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      propertyPath: m_Name
+      value: key
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 115417395}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 115417394}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 115417399}
+  m_SourcePrefab: {fileID: 100100000, guid: 8c079f9887b584d48b04f222548a9e86, type: 3}
 --- !u!1001 &722819877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8936,9 +9045,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5829645317169935058, guid: 9676c006415629a44893f719293727df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 701955669}
-    - targetCorrespondingSourceObject: {fileID: -5829645317169935058, guid: 9676c006415629a44893f719293727df, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 701955673}
     - targetCorrespondingSourceObject: {fileID: 484645534121290313, guid: 9676c006415629a44893f719293727df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 270559748}
@@ -8951,9 +9057,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 484645534121290313, guid: 9676c006415629a44893f719293727df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 270559752}
-    - targetCorrespondingSourceObject: {fileID: 484645534121290313, guid: 9676c006415629a44893f719293727df, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 270559756}
     - targetCorrespondingSourceObject: {fileID: 7192224954904532560, guid: 9676c006415629a44893f719293727df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1671757173}
@@ -8966,9 +9069,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7192224954904532560, guid: 9676c006415629a44893f719293727df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1671757177}
-    - targetCorrespondingSourceObject: {fileID: 7192224954904532560, guid: 9676c006415629a44893f719293727df, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1671757181}
     - targetCorrespondingSourceObject: {fileID: -5493536705531313067, guid: 9676c006415629a44893f719293727df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1593405220}
@@ -8981,9 +9081,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5493536705531313067, guid: 9676c006415629a44893f719293727df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1593405224}
-    - targetCorrespondingSourceObject: {fileID: -5493536705531313067, guid: 9676c006415629a44893f719293727df, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1593405228}
   m_SourcePrefab: {fileID: 100100000, guid: 9676c006415629a44893f719293727df, type: 3}
 --- !u!1 &1073014206
 GameObject:
@@ -9019,6 +9116,7 @@ Transform:
   - {fileID: 13176770}
   - {fileID: 524050824}
   - {fileID: 894200293}
+  - {fileID: 1180943755}
   - {fileID: 1650255236}
   - {fileID: 1770594874}
   - {fileID: 1658163460}
@@ -11962,19 +12060,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1650255236}
+    m_TransformParent: {fileID: 1073014207}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 04ac2e031b543944fa3bfa0ace1b53f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8839045
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04ac2e031b543944fa3bfa0ace1b53f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.135166
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04ac2e031b543944fa3bfa0ace1b53f0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.17243958
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04ac2e031b543944fa3bfa0ace1b53f0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12015,6 +12113,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 04ac2e031b543944fa3bfa0ace1b53f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1385445257}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 04ac2e031b543944fa3bfa0ace1b53f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1385445260}
   m_SourcePrefab: {fileID: 100100000, guid: 04ac2e031b543944fa3bfa0ace1b53f0, type: 3}
 --- !u!1 &1385445256 stripped
 GameObject:
@@ -12040,8 +12141,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0000002, y: 0.80000013, z: 2.0000048}
-  m_Center: {x: 0.00000011920929, y: 0.3999982, z: -0.00000017881393}
+  m_Size: {x: 0.08633089, y: 0.8000002, z: 2.0000048}
+  m_Center: {x: 0.9568348, y: 0.3999982, z: -0.00000023841858}
+--- !u!65 &1385445260
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385445256}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000002, y: 0.80000013, z: 0.04794073}
+  m_Center: {x: 0.00000011920929, y: 0.3999981, z: 0.9760318}
 --- !u!1 &1412170070
 GameObject:
   m_ObjectHideFlags: 0
@@ -13436,30 +13558,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1593405220}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1593405228}
-        m_TargetAssemblyTypeName: ChangePieceMaterial, Assembly-CSharp
-        m_MethodName: ChangeMaterial
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1593405224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13474,19 +13572,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 169860001}
   _chessPiece: {fileID: 7790895171187744254, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
---- !u!114 &1593405228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593405216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8291ca7d2139f814594bdf2a7f2d52d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: -3958846485568748562, guid: 9676c006415629a44893f719293727df, type: 3}
+  _material: {fileID: -3958846485568748562, guid: 9676c006415629a44893f719293727df, type: 3}
+  _rightPiece:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1650255237}
+        m_TargetAssemblyTypeName: CheckChessPuzzle, Assembly-CSharp
+        m_MethodName: CheckPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1601839624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13713,13 +13814,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1650255236}
+  - component: {fileID: 1650255237}
+  - component: {fileID: 1650255238}
   m_Layer: 2
   m_Name: Chessboard Puzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1650255236
 Transform:
   m_ObjectHideFlags: 0
@@ -13729,15 +13832,50 @@ Transform:
   m_GameObject: {fileID: 1650255235}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.6160955, y: 3.135166, z: -3.3275604}
+  m_LocalPosition: {x: -2.616096, y: 3.135166, z: -3.32756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 796059564}
-  - {fileID: 1180943755}
   - {fileID: 1651600081}
   m_Father: {fileID: 1073014207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1650255237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650255235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39b052488b8ee543b46362eeb1b8208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onSolve:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!95 &1650255238
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650255235}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b62c1716164c5db4082c9d737688cf74, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1651600081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8720f5613313606418e749cee8dcd5c7, type: 3}
@@ -14073,33 +14211,9 @@ MonoBehaviour:
   onInteracted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1593405224}
+      - m_Target: {fileID: 1671757177}
         m_TargetAssemblyTypeName: CheckChessPieces, Assembly-CSharp
         m_MethodName: CheckCorrectPiece
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1671757173}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1671757181}
-        m_TargetAssemblyTypeName: ChangePieceMaterial, Assembly-CSharp
-        m_MethodName: ChangeMaterial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14123,19 +14237,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 169860001}
   _chessPiece: {fileID: 7790895171187744254, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
---- !u!114 &1671757181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671757169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8291ca7d2139f814594bdf2a7f2d52d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: -3958846485568748562, guid: 9676c006415629a44893f719293727df, type: 3}
+  _material: {fileID: -3958846485568748562, guid: 9676c006415629a44893f719293727df, type: 3}
+  _rightPiece:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1650255237}
+        m_TargetAssemblyTypeName: CheckChessPuzzle, Assembly-CSharp
+        m_MethodName: CheckPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1672011109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 01dc8915a8906c44f929418e41664d14, type: 3}
@@ -19146,3 +19263,4 @@ SceneRoots:
   - {fileID: 1897545217}
   - {fileID: 1224863060}
   - {fileID: 1382064296}
+  - {fileID: 708879712}

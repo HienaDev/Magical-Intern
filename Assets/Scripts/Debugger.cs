@@ -11,7 +11,7 @@ public class Debugger : MonoBehaviour
     [SerializeField] private GameObject _cheese;
     [SerializeField] private GameObject _hourglass;
     //[SerializeField] private GameObject _key;
-    //[SerializeField] private GameObject _memoryPotion;
+    [SerializeField] private GameObject _memoryPotion;
 
     private void Start()
     {
@@ -47,10 +47,10 @@ public class Debugger : MonoBehaviour
             }
 
             // Get memory potion
-            //if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha5))
-            //{
-            //    _playerInventory.Add(_memoryPotion.GetComponent<Interactive>());
-            //}
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                _playerInventory.Add(_memoryPotion.GetComponent<Interactive>());
+            }
 
             // Get key
             //if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha6))
