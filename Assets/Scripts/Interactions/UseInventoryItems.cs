@@ -9,9 +9,9 @@ public class UseInventoryItems : MonoBehaviour
     [SerializeField] private GameObject      _magicalVisionPanel;
     [SerializeField] private GameObject      _clueSequence;
     [SerializeField] private InteractiveData _glassesData;
-    [SerializeField] private GameObject[]    chessPieces;
+    [SerializeField] private GameObject[]    _chessPieces;
 
-    private bool canUseGlasses = false;
+    private bool _canUseGlasses = false;
 
     public void UseGlasses(bool canUse)
     {
@@ -32,7 +32,7 @@ public class UseInventoryItems : MonoBehaviour
         {
             _playerInventory.Remove(_memoryPotion);
 
-            foreach (GameObject cp in chessPieces)
+            foreach (GameObject cp in _chessPieces)
             {
                 cp.SetActive(true);
             }
@@ -41,7 +41,7 @@ public class UseInventoryItems : MonoBehaviour
 
     public void CanUseGlasses()
     {
-        canUseGlasses = true;
+        _canUseGlasses = true;
         _glassesData.inventoryName = "magical glasses";
     }
 
@@ -53,7 +53,7 @@ public class UseInventoryItems : MonoBehaviour
                 UseMemoryPotion();
 
             if (_playerInventory.IsSelected(_glasses))
-                UseGlasses(canUseGlasses);
+                UseGlasses(_canUseGlasses);
         }
     }
 }

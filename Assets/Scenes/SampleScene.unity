@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.10548376, g: 0.122673504, b: 0.33907437, a: 1}
+  m_IndirectSpecularColor: {r: 0.105476655, g: 0.1226482, b: 0.3390653, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4373,8 +4373,7 @@ MonoBehaviour:
   _magicalVisionPanel: {fileID: 126978251}
   _clueSequence: {fileID: 1886761694}
   _glassesData: {fileID: 11400000, guid: 6900f727898049e4e8d6a8cfe9ae1d2c, type: 2}
-  chessPieces:
-  - {fileID: 524050820}
+  _chessPieces:
   - {fileID: 701955661}
   - {fileID: 270559744}
   - {fileID: 1671757169}
@@ -12255,13 +12254,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1e146f3e1c60742acbdaf58ff81f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsThatStartDisabled:
+  _objectsThatStartDisabled:
   - {fileID: 325795168}
-  - {fileID: 1002742630}
   - {fileID: 701955661}
   - {fileID: 270559744}
   - {fileID: 1671757169}
   - {fileID: 1593405216}
+  - {fileID: 1002742630}
 --- !u!4 &1382064296
 Transform:
   m_ObjectHideFlags: 0
