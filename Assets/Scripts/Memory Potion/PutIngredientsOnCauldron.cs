@@ -1,26 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.Events;
 
 public class PutIngredientsOnCauldron : MonoBehaviour
 {
-
+    [SerializeField] private PlayerInventory _playerInventory;
+    [SerializeField] private CountInteractions _insignia;
     [SerializeField] private GameObject _glasses;
     [SerializeField] private GameObject _cheese;
     [SerializeField] private GameObject _hourglass;
     [SerializeField] private GameObject _memoryPotion;
-
     [SerializeField] private GameObject _magicGlassesVision;
 
     private bool _position1;
     private bool _position2;
     private bool _position3;
-
-    [SerializeField] private PlayerInventory _playerInventory;
-
-    [SerializeField] private CountInteractions _insignia;
 
     public void PutIngredientIn()
     {
@@ -29,7 +21,6 @@ public class PutIngredientsOnCauldron : MonoBehaviour
             _playerInventory.Contains(_hourglass.GetComponent<Interactive>()) &&
             _insignia.RightPosition)
         {
-
             _playerInventory.Remove(_glasses.GetComponent<Interactive>());
             _playerInventory.Remove(_cheese.GetComponent<Interactive>());
             _playerInventory.Remove(_hourglass.GetComponent<Interactive>());
@@ -47,14 +38,9 @@ public class PutIngredientsOnCauldron : MonoBehaviour
             gameObject.GetComponent<Animator>().SetTrigger("GoCauldron");
         }
         else
-            Debug.Log("Not ready");
-
-        Debug.Log(_insignia.RightPosition);
+            return;
 
     }
 
     public void TriggerPotion() => _memoryPotion.SetActive(true);
-
-
-
 }
