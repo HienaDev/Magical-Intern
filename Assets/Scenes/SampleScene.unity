@@ -15068,6 +15068,7 @@ MonoBehaviour:
   _hourglass: {fileID: 1002742630}
   _memoryPotion: {fileID: 325795168}
   _magicGlassesVision: {fileID: 126978251}
+  _sequenceClue: {fileID: 1886761694}
 --- !u!95 &1712892188
 Animator:
   serializedVersion: 5

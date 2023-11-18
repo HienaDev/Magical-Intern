@@ -9,6 +9,7 @@ public class PutIngredientsOnCauldron : MonoBehaviour
     [SerializeField] private GameObject _hourglass;
     [SerializeField] private GameObject _memoryPotion;
     [SerializeField] private GameObject _magicGlassesVision;
+    [SerializeField] private GameObject _sequenceClue;
 
     private bool _position1;
     private bool _position2;
@@ -31,6 +32,7 @@ public class PutIngredientsOnCauldron : MonoBehaviour
 
             // Disable magic glasses in case they are on
             _magicGlassesVision.SetActive(false);
+            _sequenceClue.SetActive(false);
 
             _glasses.GetComponent<Animator>().SetTrigger("GoCauldron");
             _cheese.GetComponent<Animator>().SetTrigger("GoCauldron");
