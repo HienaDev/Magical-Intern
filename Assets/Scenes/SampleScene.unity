@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.105476655, g: 0.1226482, b: 0.3390653, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1567,27 +1567,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.35855594, y: 0.41605914, z: 0.14308849}
   m_Center: {x: -0.12410234, y: 0.000000022351742, z: -0.000000044703484}
---- !u!95 &229304336
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229304327}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b6a15a80418bf5f40adc3cf984f028ae, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &229304337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,9 +1916,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02a2911259fafe84498861ec0bfa128a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1867313841}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02a2911259fafe84498861ec0bfa128a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1867313848}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02a2911259fafe84498861ec0bfa128a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1867313849}
@@ -2613,27 +2589,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3757987, y: 0.41605914, z: 0.17201716}
   m_Center: {x: -0.11548096, y: 0.000000022351742, z: 0.000000029802322}
---- !u!95 &334210384
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334210375}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 00b8bf98de38d1b4fa40f17888405f51, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &334210385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2786,9 +2741,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4066d3038ad8cef45a12d64f52393fd8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2101837295}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4066d3038ad8cef45a12d64f52393fd8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2101837302}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4066d3038ad8cef45a12d64f52393fd8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2101837303}
@@ -4805,27 +4757,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3757987, y: 0.41605914, z: 0.17201716}
   m_Center: {x: -0.11548096, y: 0.000000022351742, z: 0.000000029802322}
---- !u!95 &571871724
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571871715}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 09d3b938998ec6249afd957aad580e3b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &571871725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6927,9 +6858,6 @@ PrefabInstance:
       addedObject: {fileID: 571871717}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4066d3038ad8cef45a12d64f52393fd8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 571871724}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4066d3038ad8cef45a12d64f52393fd8, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 571871725}
   m_SourcePrefab: {fileID: 100100000, guid: 4066d3038ad8cef45a12d64f52393fd8, type: 3}
 --- !u!1 &821935914
@@ -7521,9 +7449,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4066d3038ad8cef45a12d64f52393fd8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 334210377}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4066d3038ad8cef45a12d64f52393fd8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 334210384}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4066d3038ad8cef45a12d64f52393fd8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 334210385}
@@ -13696,9 +13621,6 @@ PrefabInstance:
       addedObject: {fileID: 229304329}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02a2911259fafe84498861ec0bfa128a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 229304336}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02a2911259fafe84498861ec0bfa128a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 229304337}
   m_SourcePrefab: {fileID: 100100000, guid: 02a2911259fafe84498861ec0bfa128a, type: 3}
 --- !u!1 &1578955525
@@ -16413,27 +16335,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.35855594, y: 0.41605914, z: 0.14308849}
   m_Center: {x: -0.12410234, y: 0.000000022351742, z: -0.000000044703484}
---- !u!95 &1867313848
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867313839}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0a63ce2eeacee81499f03b5eb4787b0c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1867313849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18354,27 +18255,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3757987, y: 0.41605914, z: 0.17201716}
   m_Center: {x: -0.11548096, y: 0.000000022351742, z: 0.000000029802322}
---- !u!95 &2101837302
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101837293}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b9fbc017fd99d2d4ab9fe14ef86de577, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2101837303
 MonoBehaviour:
   m_ObjectHideFlags: 0
