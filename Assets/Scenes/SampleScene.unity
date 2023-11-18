@@ -15075,6 +15075,7 @@ MonoBehaviour:
   _cheese: {fileID: 1658163455}
   _hourglass: {fileID: 1002742630}
   _memoryPotion: {fileID: 325795168}
+  _magicGlassesVision: {fileID: 126978251}
   _playerInventory: {fileID: 169860001}
   _insignia: {fileID: 866544569}
 --- !u!95 &1712892188
