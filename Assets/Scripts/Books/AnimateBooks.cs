@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class AnimateBooks : MonoBehaviour
 {
+    [SerializeField] private float _movementIncrement;
+    [SerializeField] private float _finalPosition;
 
     private bool    _selected = false;
     private float   _initialPosition;
     private Vector3 _auxPosition;
-    [SerializeField] private float _movementIncrement;
-    [SerializeField] private float _finalPosition;
 
     private void Start()
     {

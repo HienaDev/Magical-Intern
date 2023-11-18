@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,11 +5,9 @@ public class CheckChessPieces : MonoBehaviour
 {
 
     [SerializeField] private PlayerInventory _playerInventory;
-
-    [SerializeField] private GameObject _chessPiece;
-    [SerializeField] private Material _material;
-
-    [SerializeField] private UnityEvent _rightPiece;
+    [SerializeField] private GameObject      _chessPiece;
+    [SerializeField] private Material        _material;
+    [SerializeField] private UnityEvent      _rightPiece;
 
     public void CheckCorrectPiece()
     {
@@ -25,9 +21,6 @@ public class CheckChessPieces : MonoBehaviour
 
     private void ReplacePieceWithRealPiece()
     {
-
-        Debug.Log("Change attempt");
-
         _rightPiece.Invoke();
 
         gameObject.GetComponent<Outline>().enabled = false;

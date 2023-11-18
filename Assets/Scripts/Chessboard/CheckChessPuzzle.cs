@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class CheckChessPuzzle : MonoBehaviour
 {
-
     [SerializeField] private UnityEvent _onSolve;
 
     private int _rightPositionPieces = 0;

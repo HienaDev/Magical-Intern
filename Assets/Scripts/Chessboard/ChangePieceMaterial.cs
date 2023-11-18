@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangePieceMaterial : MonoBehaviour
 {
-
-    [SerializeField] private Material material;
+    [SerializeField] private Material _material;
 
     public void ChangeMaterial()
     {
-        gameObject.GetComponent<MeshRenderer>().material = material;
+        gameObject.GetComponent<MeshRenderer>().material = _material;
     }
 }

@@ -8,6 +8,7 @@ public class CheckBookshelfPuzzle : MonoBehaviour
     [HideInInspector] public int[]      _bookOrder;
     [SerializeField] private int[]      _rightBookOrder;
     [SerializeField] private UnityEvent _eventOnSolve;
+    
     private bool _solved = false;
 
     // Start is called before the first frame update
