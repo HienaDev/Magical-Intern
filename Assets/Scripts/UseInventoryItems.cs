@@ -23,7 +23,7 @@ public class UseInventoryItems : MonoBehaviour
             if (_playerInventory.IsSelected(_glasses))
             {
                 _magicalVisionPanel.SetActive(!_magicalVisionPanel.activeSelf);
-                _clueSequence.SetActive(!_magicalVisionPanel.activeSelf);
+                _clueSequence.SetActive(!_clueSequence.activeSelf);
             }
 
         }
