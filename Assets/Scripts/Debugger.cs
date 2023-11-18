@@ -5,7 +5,7 @@ using UnityEngine;
 public class Debugger : MonoBehaviour
 {
     private PlayerInventory _playerInventory;
-    [SerializeField] private MagicGlasses _magicGlassesScriptReference;
+    [SerializeField] private UseInventoryItems _magicGlassesScriptReference;
     [SerializeField] private GameObject _glasses;
     [SerializeField] private GameObject _chessPiece;
     [SerializeField] private GameObject _cheese;

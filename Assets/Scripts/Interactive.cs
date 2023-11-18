@@ -6,6 +6,8 @@ public class Interactive : MonoBehaviour
 {
     [SerializeField] private InteractiveData _interactiveData;
 
+    [SerializeField] private bool _outlineAlwaysOn;
+
     private InteractionManager  _interactionManager;
     private PlayerInventory     _playerInventory;
     private List<Interactive>   _requirements;
@@ -14,6 +16,7 @@ public class Interactive : MonoBehaviour
     private Outline             _outline;
     private bool                _requirementsMet;
     private int                 _interactionCount;
+    
     
     public bool isOn;
     public UnityEvent onPicked;
@@ -185,8 +188,9 @@ public class Interactive : MonoBehaviour
 
     public void SetOutline(bool enabled)
     {
-        if (_outline != null)
-            _outline.enabled = enabled;
+        if (!_outlineAlwaysOn)
+            if (_outline != null)
+                _outline.enabled = enabled;
     }
 
     public int GetInteractionCount() => _interactionCount;
@@ -194,5 +198,7 @@ public class Interactive : MonoBehaviour
     public bool GetReqsMet() => _requirementsMet;
 
     public void SetRequirementsMet(bool toggle) => _requirementsMet = toggle;
+
+    public string GetInteractiveName() => _interactiveData.name;
 
 }

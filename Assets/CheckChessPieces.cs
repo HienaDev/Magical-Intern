@@ -10,16 +10,18 @@ public class CheckChessPieces : MonoBehaviour
 
     [SerializeField] private GameObject _chessPiece;
 
-    [SerializeField] private UnityEvent _triggerChessPiece;
-
     public void CheckCorrectPiece()
     {
-        if (_playerInventory.IsSelected(_chessPiece.GetComponent<Interactive>()))
+        if (_playerInventory.GetSelected().GetInteractiveName() == "ChessPiece" )
         {
-            _playerInventory.Remove(_chessPiece.GetComponent<Interactive>());
+            _playerInventory.Remove(_playerInventory.GetSelected());
 
             Debug.Log("corret piece");
-            _triggerChessPiece.Invoke();
         }
+        else
+        {
+            Debug.Log(_playerInventory.GetSelected().GetInteractiveName());
+            Debug.Log("Wrong piece");
+        }    
     }
 }

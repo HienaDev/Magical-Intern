@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MagicGlasses : MonoBehaviour
+public class UseInventoryItems : MonoBehaviour
 {
     [SerializeField] private Interactive _glasses;
     [SerializeField] private PlayerInventory _playerInventory;
@@ -11,23 +11,38 @@ public class MagicGlasses : MonoBehaviour
     [SerializeField] private GameObject _clueSequence;
     [SerializeField] private InteractiveData _glassesData;
 
+    [SerializeField] private Interactive _memoryPotion;
+    [SerializeField] private GameObject[] chessPieces;
+
     private bool canUseGlasses = false;
 
-    public void UseGlasses (bool canUse)
+    public void UseGlasses(bool canUse)
     {
         if (canUse)
         {
-            if (_playerInventory.IsSelected(_glasses) && Input.GetKeyDown(KeyCode.E))
+            if (_playerInventory.IsSelected(_glasses))
             {
                 _magicalVisionPanel.SetActive(!_magicalVisionPanel.activeSelf);
                 _clueSequence.SetActive(!_magicalVisionPanel.activeSelf);
             }
 
         }
-        else
+
+    }
+
+    public void UseMemoryPotion()
+    {
+
+        if (_playerInventory.IsSelected(_memoryPotion))
         {
-            return;
+            _playerInventory.Remove(_memoryPotion);
+
+            foreach (GameObject cp in chessPieces)
+            {
+                cp.SetActive(true);
+            }
         }
+
     }
 
     public void CanUseGlasses()
@@ -38,6 +53,14 @@ public class MagicGlasses : MonoBehaviour
 
     void Update()
     {
-        UseGlasses(canUseGlasses);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (_playerInventory.IsSelected(_memoryPotion))
+                UseMemoryPotion();
+
+            if (_playerInventory.IsSelected(_glasses))
+                UseGlasses(canUseGlasses);
+
+        }
     }
 }

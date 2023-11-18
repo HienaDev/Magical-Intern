@@ -10,8 +10,8 @@ public class PutIngredientsOnCauldron : MonoBehaviour
     [SerializeField] private GameObject _glasses;
     [SerializeField] private GameObject _cheese;
     [SerializeField] private GameObject _hourglass;
+    [SerializeField] private GameObject _memoryPotion;
 
-    [SerializeField] private UnityEvent onSolve;
 
     private bool _position1;
     private bool _position2;
@@ -54,6 +54,8 @@ public class PutIngredientsOnCauldron : MonoBehaviour
         else
             Debug.Log("Not ready");
     }
+
+    public void TriggerPotion() => _memoryPotion.SetActive(true);
 
 
 
