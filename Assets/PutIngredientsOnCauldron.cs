@@ -19,23 +19,14 @@ public class PutIngredientsOnCauldron : MonoBehaviour
 
     [SerializeField] private PlayerInventory _playerInventory;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private CountInteractions _insignia;
 
     public void PutIngredientIn()
     {
         if (_playerInventory.Contains(_glasses.GetComponent<Interactive>()) &&
             _playerInventory.Contains(_cheese.GetComponent<Interactive>()) &&
-            _playerInventory.Contains(_hourglass.GetComponent<Interactive>()))
+            _playerInventory.Contains(_hourglass.GetComponent<Interactive>()) &&
+            _insignia.RightPosition)
         {
 
             _playerInventory.Remove(_glasses.GetComponent<Interactive>());
@@ -53,6 +44,9 @@ public class PutIngredientsOnCauldron : MonoBehaviour
         }
         else
             Debug.Log("Not ready");
+
+        Debug.Log(_insignia.RightPosition);
+
     }
 
     public void TriggerPotion() => _memoryPotion.SetActive(true);

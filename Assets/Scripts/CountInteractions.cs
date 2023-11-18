@@ -5,21 +5,23 @@ using UnityEngine;
 public class CountInteractions : MonoBehaviour
 {
 
-    private Interactive interactive;
+    private Interactive _interactive;
 
-    [SerializeField] private int numberOfInteractions;
+    [SerializeField] private int _numberOfInteractions;
+
+    [SerializeField] private int _rightPosition;
     public bool RightPosition { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        interactive = GetComponent<Interactive>();
+        _interactive = GetComponent<Interactive>();
     }
 
 
     public void CheckReqs()
     {
-        if (interactive.GetInteractionCount() % 12 == numberOfInteractions)
+        if (_interactive.GetInteractionCount() % _rightPosition == _numberOfInteractions)
         {
             RightPosition = true;
         }
@@ -28,6 +30,5 @@ public class CountInteractions : MonoBehaviour
             RightPosition = false;
         }
 
-        Debug.Log( gameObject.name + " " + interactive.GetReqsMet());
     }
 }

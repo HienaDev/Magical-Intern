@@ -6082,6 +6082,7 @@ GameObject:
   - component: {fileID: 866544566}
   - component: {fileID: 866544565}
   - component: {fileID: 866544568}
+  - component: {fileID: 866544569}
   m_Layer: 0
   m_Name: Insignia
   m_TagString: Untagged
@@ -6146,7 +6147,19 @@ MonoBehaviour:
       m_Calls: []
   onInteracted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 866544569}
+        m_TargetAssemblyTypeName: CountInteractions, Assembly-CSharp
+        m_MethodName: CheckReqs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &866544567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6189,6 +6202,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &866544569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866544563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc81fe7c30bcee84d98322a8ecaae975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberOfInteractions: 2
+  _rightPosition: 4
 --- !u!1 &866646917
 GameObject:
   m_ObjectHideFlags: 0
@@ -6645,7 +6672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bookOrder: 
-  _rightBookOrder: 
+  _rightBookOrder: 0200000001000000040000000300000005000000
   _eventOnSolve:
     m_PersistentCalls:
       m_Calls:
@@ -13892,6 +13919,7 @@ MonoBehaviour:
   _hourglass: {fileID: 1002742630}
   _memoryPotion: {fileID: 325795168}
   _playerInventory: {fileID: 169860001}
+  _insignia: {fileID: 866544569}
 --- !u!95 &1712892188
 Animator:
   serializedVersion: 5
@@ -17502,6 +17530,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1073014207}
     m_Modifications:
+    - target: {fileID: 624766080253290400, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: _rightPosition
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 624766080253290400, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: _numberOfInteractions
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2253573886831294582, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.1327
@@ -17541,6 +17577,14 @@ PrefabInstance:
     - target: {fileID: 2253573886831294582, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585224252949663713, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: _rightPosition
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585224252949663713, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
+      propertyPath: _numberOfInteractions
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3929623444121718279, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       propertyPath: m_Name
