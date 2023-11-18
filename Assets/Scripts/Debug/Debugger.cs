@@ -57,12 +57,6 @@ public class Debugger : MonoBehaviour
             {
                 _playerInventory.Add(_key.GetComponent<Interactive>());
             }
-
-            // Activate magical glasses
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha7))
-            {
-                _magicGlassesScriptReference.CanUseGlasses();
-            }
         }
     }
 }
