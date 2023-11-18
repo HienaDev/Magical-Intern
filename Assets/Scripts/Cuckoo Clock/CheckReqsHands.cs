@@ -1,25 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CheckReqsHands : MonoBehaviour
 {
+    [SerializeField] private CountInteractions _minuteHand;
+    [SerializeField] private CountInteractions _hourHand;
 
-    [SerializeField] private CountInteractions minuteHand;
-    [SerializeField] private CountInteractions hourHand;
-
-    private Animator cuckooAnimator;
+    private Animator _cuckooAnimator;
 
     private void Awake()
     {
-        cuckooAnimator = GetComponent<Animator>();
+        _cuckooAnimator = GetComponent<Animator>();
     }
     public void CheckReqs()
     {
-        if (minuteHand.RightPosition == true && hourHand.RightPosition == true)
+        if (_minuteHand.RightPosition == true && _hourHand.RightPosition == true)
         {
-            cuckooAnimator.SetTrigger("Cuckoo");
+            _cuckooAnimator.SetTrigger("Cuckoo");
         }
     }
 }
