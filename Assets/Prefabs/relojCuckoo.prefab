@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 2295088678213153588}
   - component: {fileID: 3805043862971801426}
   m_Layer: 0
-  m_Name: enganche pajaro
+  m_Name: bird hitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 8867172624735428131}
   - component: {fileID: 4649520038414205103}
   m_Layer: 0
-  m_Name: Muelle
+  m_Name: Pier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1222,7 +1222,7 @@ Transform:
   m_GameObject: {fileID: 4552759320341458404}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.195}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1554,6 +1554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactiveData: {fileID: 11400000, guid: 1e68d170e1ca33743a2bcd77f5d526c0, type: 2}
+  _outlineAlwaysOn: 0
   isOn: 1
   onPicked:
     m_PersistentCalls:
@@ -1660,7 +1661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc81fe7c30bcee84d98322a8ecaae975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfInteractions: 9
+  _numberOfInteractions: 9
+  _rightPosition: 12
 --- !u!1 &5849558188753041770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,6 +1796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactiveData: {fileID: 11400000, guid: c7d739f5b6d89da4eb7aeb8afe341124, type: 2}
+  _outlineAlwaysOn: 0
   isOn: 1
   onPicked:
     m_PersistentCalls:
@@ -1900,7 +1903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc81fe7c30bcee84d98322a8ecaae975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfInteractions: 9
+  _numberOfInteractions: 9
+  _rightPosition: 12
 --- !u!1 &6051012503484385654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,7 +2249,7 @@ GameObject:
   - component: {fileID: 292444808902347247}
   - component: {fileID: 3055009533337026722}
   m_Layer: 0
-  m_Name: Pico
+  m_Name: peak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2765,7 +2769,7 @@ GameObject:
   - component: {fileID: 7224143807962492631}
   - component: {fileID: 3957111873463251878}
   m_Layer: 0
-  m_Name: alas
+  m_Name: wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2931,7 +2935,7 @@ GameObject:
   - component: {fileID: 8934597662673937894}
   - component: {fileID: 6416353883888930755}
   m_Layer: 0
-  m_Name: polo
+  m_Name: pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3074,8 +3078,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1802b656de95a824588f1f079a53a3b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minuteHand: {fileID: 624766080253290400}
-  hourHand: {fileID: 3585224252949663713}
+  _minuteHand: {fileID: 624766080253290400}
+  _hourHand: {fileID: 3585224252949663713}
 --- !u!95 &7711414139648673985
 Animator:
   serializedVersion: 5

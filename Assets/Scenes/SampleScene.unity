@@ -809,10 +809,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42dd4e51b3e556d4e8183eb5106892b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalMouseSensitivity: 1.5
-  verticalMouseSensitivity: 1.5
-  maxHeadUpAngle: 70
-  minHeadDownAngle: 290
+  _horizontalMouseSensitivity: 1.5
+  _verticalMouseSensitivity: 1.5
+  _maxHeadUpAngle: 70
+  _minHeadDownAngle: 290
 --- !u!143 &169860000
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4368,11 +4368,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _glasses: {fileID: 1431681649}
+  _memoryPotion: {fileID: 325795171}
   _playerInventory: {fileID: 169860001}
   _magicalVisionPanel: {fileID: 126978251}
   _clueSequence: {fileID: 1886761694}
   _glassesData: {fileID: 11400000, guid: 6900f727898049e4e8d6a8cfe9ae1d2c, type: 2}
-  _memoryPotion: {fileID: 325795171}
   chessPieces:
   - {fileID: 524050820}
   - {fileID: 701955661}
@@ -15061,13 +15061,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb577c25170fce740acf112409a8f3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerInventory: {fileID: 169860001}
+  _insignia: {fileID: 866544569}
   _glasses: {fileID: 156762914}
   _cheese: {fileID: 1658163455}
   _hourglass: {fileID: 1002742630}
   _memoryPotion: {fileID: 325795168}
   _magicGlassesVision: {fileID: 126978251}
-  _playerInventory: {fileID: 169860001}
-  _insignia: {fileID: 866544569}
 --- !u!95 &1712892188
 Animator:
   serializedVersion: 5
@@ -19278,14 +19278,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1073014207}
     m_Modifications:
-    - target: {fileID: 624766080253290400, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: _rightPosition
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 624766080253290400, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: _numberOfInteractions
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2253573886831294582, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.1327
@@ -19325,38 +19317,6 @@ PrefabInstance:
     - target: {fileID: 2253573886831294582, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3585224252949663713, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: _rightPosition
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3585224252949663713, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: _numberOfInteractions
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3929623444121718279, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: m_Name
-      value: bird hitch
-      objectReference: {fileID: 0}
-    - target: {fileID: 4114424474180175250, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: m_Name
-      value: Pier
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470059277939996837, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7170318310750135578, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: m_Name
-      value: peak
-      objectReference: {fileID: 0}
-    - target: {fileID: 7992055836605792586, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: m_Name
-      value: wings
-      objectReference: {fileID: 0}
-    - target: {fileID: 8127158040540045226, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
-      propertyPath: m_Name
-      value: pole
       objectReference: {fileID: 0}
     - target: {fileID: 8672277151380819023, guid: 9023c79fdbf76e74fbe965d3cd57bcb4, type: 3}
       propertyPath: m_Name
