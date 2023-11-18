@@ -10,7 +10,7 @@ public class Debugger : MonoBehaviour
     [SerializeField] private GameObject _chessPiece;
     [SerializeField] private GameObject _cheese;
     [SerializeField] private GameObject _hourglass;
-    //[SerializeField] private GameObject _key;
+    [SerializeField] private GameObject _key;
     [SerializeField] private GameObject _memoryPotion;
 
     private void Start()
@@ -53,10 +53,10 @@ public class Debugger : MonoBehaviour
             }
 
             // Get key
-            //if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha6))
-            //{
-            //    _playerInventory.Add(_key.GetComponent<Interactive>());
-            //}
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                _playerInventory.Add(_key.GetComponent<Interactive>());
+            }
 
             // Activate magical glasses
             if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha7))
