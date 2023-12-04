@@ -5,12 +5,15 @@ using UnityEngine;
 public class LightFlicker : MonoBehaviour
 {
 
-    [SerializeField] private float flickerIntensity;
-    [SerializeField] private float flickersPerSecond;
-    [SerializeField] private float speedRandomness;
+    [SerializeField] private float intensityChange;
+    [SerializeField] private float timerFlicker;
+    [SerializeField] private float timerPosition;
+    [SerializeField] private float positionChange;
 
-    private float time;
+    private float justFlicked;
+    private float justMoved;
     private float startingIntensity;
+    private Vector3 startingPosition;
     private Light light;
 
 
@@ -18,14 +21,24 @@ public class LightFlicker : MonoBehaviour
     void Start()
     {
         light = GetComponent<Light>();   
-        startingIntensity = light.intensity;    
+        startingIntensity = light.intensity;
+        startingPosition = gameObject.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime * (1 - Random.Range(-speedRandomness, speedRandomness)) * Mathf.PI;
+        if (Time.time - justFlicked > timerFlicker)
+        {
+            justFlicked = Time.time;
+            light.intensity = startingIntensity + Random.Range(-intensityChange, intensityChange);
+        }
 
-        light.intensity = startingIntensity + Mathf.Sin(time * flickersPerSecond) * flickerIntensity;
+        if (Time.time - justMoved > timerPosition)
+        {
+            Debug.Log("moved");
+            justMoved = Time.time;
+            gameObject.transform.position = new Vector3(startingPosition.x + Random.Range(-positionChange, positionChange), startingPosition.y, startingPosition.z);
+        }
     }
 }
