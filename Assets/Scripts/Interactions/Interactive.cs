@@ -201,4 +201,6 @@ public class Interactive : MonoBehaviour
 
     public string GetInteractiveName() => _interactiveData.name;
 
+    public void SetInteractiveData(InteractiveData interactiveD) => _interactiveData = interactiveD;
+
 }
