@@ -2,53 +2,58 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private Camera         mainCamera;
-    [SerializeField] private Camera         menuCamera;
-    [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private GameObject     inGameUI;
-    [SerializeField] private GameObject     mainMenuPanel;
-    [SerializeField] private GameObject     settingsPanel;
-    [SerializeField] private GameObject     creditsPanel;
+    [SerializeField] private Camera         _mainCamera;
+    [SerializeField] private Camera         _menuCamera;
+    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private GameObject     _inGameUI;
+    [SerializeField] private GameObject     _mainMenuPanel;
+    [SerializeField] private GameObject     _settingsPanel;
+    [SerializeField] private GameObject     _creditsPanel;
 
     void Start()
     {
-        mainCamera.enabled =     false;
-        menuCamera.enabled =     true;
-        playerMovement.enabled = false;
-        inGameUI.SetActive(false);
-        mainMenuPanel.SetActive(true);
+        _mainCamera.enabled =     false;
+        _menuCamera.enabled =     true;
+        _playerMovement.enabled = false;
+        _inGameUI.SetActive(false);
+        _mainMenuPanel.SetActive(true);
     }
-    
+
     public void Play()
     {
         // TODO: Start Animation
 
         // TODO: After Animation:
-        mainCamera.enabled =     true;
-        menuCamera.enabled =     false;
-        playerMovement.enabled = true;
-        inGameUI.SetActive(true);
-        mainMenuPanel.SetActive(false);
+        _mainCamera.enabled =     true;
+        _menuCamera.enabled =     false;
+        _playerMovement.enabled = true;
+        _inGameUI.SetActive(true);
+        _mainMenuPanel.SetActive(false);
+        _playerMovement.ShowCursor();
     }
 
     public void Settings()
     {
-        settingsPanel.SetActive(true);
+        _settingsPanel.SetActive(true);
+        _mainMenuPanel.SetActive(false);
     }
 
     public void CloseSettings()
     {
-        settingsPanel.SetActive(false);
+        _settingsPanel.SetActive(false);
+        _mainMenuPanel.SetActive(true);
     }
 
     public void Credits()
     {
-        creditsPanel.SetActive(true);
+        _creditsPanel.SetActive(true);
+        _mainMenuPanel.SetActive(false);
     }
 
     public void CloseCredits()
     {
-        creditsPanel.SetActive(false);
+        _creditsPanel.SetActive(false);
+        _mainMenuPanel.SetActive(true);
     }
 
     public void Quit()
@@ -60,17 +65,13 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (settingsPanel.activeSelf)
+            if (_settingsPanel.activeSelf)
             {
                 CloseSettings();
             }
-            else if (creditsPanel.activeSelf)
+            else if (_creditsPanel.activeSelf)
             {
                 CloseCredits();
-            }
-            else
-            {
-                Quit();
             }
         }
     }

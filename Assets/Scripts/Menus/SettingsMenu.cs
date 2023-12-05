@@ -8,45 +8,41 @@ using System.Linq;
 public class SettingsMenu : MonoBehaviour
 {
     //[SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private TMP_Dropdown   resolutionDropdown;
-    [SerializeField] private Slider         sensitivitySlider;
-    [SerializeField] private PlayerMovement playerMovement;
-    private Resolution[] resolutions;
+    [SerializeField] private TMP_Dropdown   _resolutionDropdown;
+    [SerializeField] private Slider         _sensitivitySlider;
+    [SerializeField] private PlayerMovement _playerMovement;
+
+    private Resolution[] _resolutions;
 
     private void Start()
     {   
-        resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
+        _resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
 
-        resolutionDropdown.ClearOptions();
+        _resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
 
         int currentResolutionIndex = 0;
 
-        for (int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < _resolutions.Length; i++)
         {
-            string option = resolutions[i].width + "x" + resolutions[i].height;
+            string option = _resolutions[i].width + "x" + _resolutions[i].height;
 
             options.Add(option);
 
-            if (resolutions[i].width == Screen.currentResolution.width &&
-                resolutions[i].height == Screen.currentResolution.height)
+            if (_resolutions[i].width == Screen.currentResolution.width &&
+                _resolutions[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
             }
         }
         
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
-        
+        _resolutionDropdown.AddOptions(options);
+        _resolutionDropdown.value = currentResolutionIndex;
+        _resolutionDropdown.RefreshShownValue();
 
-        sensitivitySlider.value = playerMovement.GetSensitivity();
-    }
 
-    public void CloseSettings()
-    {
-        gameObject.SetActive(false);
+        _sensitivitySlider.value = _playerMovement.GetSensitivity();
     }
 
     public void SetQuality(int qualityIndex)
@@ -61,13 +57,13 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        Resolution resolution = _resolutions[resolutionIndex];
 
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     public void SetSensitive(float sensitivity)
     {
-        playerMovement.SetSensitivity(sensitivity);
+        _playerMovement.SetSensitivity(sensitivity);
     }
 }

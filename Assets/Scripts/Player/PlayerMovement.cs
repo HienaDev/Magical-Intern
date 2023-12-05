@@ -14,13 +14,21 @@ public class PlayerMovement : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         _head = GetComponentInChildren<Camera>().transform;
+    }
 
+    private void OnEnable()
+    {
         HideCursor();
     }
 
     private void HideCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
