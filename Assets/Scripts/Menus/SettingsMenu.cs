@@ -8,8 +8,10 @@ using System.Linq;
 public class SettingsMenu : MonoBehaviour
 {
     //[SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
-    Resolution[] resolutions;
+    [SerializeField] private TMP_Dropdown   resolutionDropdown;
+    [SerializeField] private Slider         sensitivitySlider;
+    [SerializeField] private PlayerMovement playerMovement;
+    private Resolution[] resolutions;
 
     private void Start()
     {   
@@ -37,6 +39,9 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+        
+
+        sensitivitySlider.value = playerMovement.GetSensitivity();
     }
 
     public void CloseSettings()
@@ -59,5 +64,10 @@ public class SettingsMenu : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
 
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetSensitive(float sensitivity)
+    {
+        playerMovement.SetSensitivity(sensitivity);
     }
 }

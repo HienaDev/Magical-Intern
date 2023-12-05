@@ -67,6 +67,17 @@ public class PlayerMovement : MonoBehaviour
         _characterController.Move(move);
     }
 
+    public void SetSensitivity(float sensitivity)
+    {
+        _horizontalMouseSensitivity = sensitivity;
+        _verticalMouseSensitivity   = sensitivity;
+    }
+
+    public float GetSensitivity()
+    {
+        return _horizontalMouseSensitivity;
+    }
+
     //private void FixedUpdate()
     //{
     //    float x = Input.GetAxis("Forward") * 0.1f;
