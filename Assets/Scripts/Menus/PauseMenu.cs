@@ -6,8 +6,8 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject     _pauseMenuPanel;
     [SerializeField] private GameObject     _mainMenuPanel;
-    [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private GameObject     _inGameUI;
+    [SerializeField] private PlayerMovement _playerMovement;
 
     // Update is called once per frame
     void Update()
@@ -41,7 +41,6 @@ public class PauseMenu : MonoBehaviour
         _pauseMenuPanel.SetActive(true);
         _inGameUI.SetActive(false);
         _playerMovement.enabled = false;
-        _playerMovement.ShowCursor();
     }
 
     public void MainMenu()

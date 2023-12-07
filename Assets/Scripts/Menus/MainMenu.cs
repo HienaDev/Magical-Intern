@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject     _mainMenuPanel;
     [SerializeField] private GameObject     _settingsPanel;
     [SerializeField] private GameObject     _creditsPanel;
+    [SerializeField] private GameObject     _pauseMenuPanel;
 
     void Start()
     {
@@ -29,7 +30,6 @@ public class MainMenu : MonoBehaviour
         _playerMovement.enabled = true;
         _inGameUI.SetActive(true);
         _mainMenuPanel.SetActive(false);
-        _playerMovement.ShowCursor();
     }
 
     public void Settings()
@@ -41,7 +41,11 @@ public class MainMenu : MonoBehaviour
     public void CloseSettings()
     {
         _settingsPanel.SetActive(false);
-        _mainMenuPanel.SetActive(true);
+
+        if (_pauseMenuPanel.activeSelf)
+            _mainMenuPanel.SetActive(false);
+        else
+            _mainMenuPanel.SetActive(true);
     }
 
     public void Credits()

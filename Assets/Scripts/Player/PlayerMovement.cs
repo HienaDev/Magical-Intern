@@ -21,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
         HideCursor();
     }
 
+    private void OnDisable()
+    {
+        ShowCursor();
+    }
+
     private void HideCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
