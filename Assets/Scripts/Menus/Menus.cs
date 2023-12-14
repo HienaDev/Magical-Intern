@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+public class Menus : MonoBehaviour
 {
     [SerializeField] private Camera         _mainCamera;
     [SerializeField] private Camera         _menuCamera;
@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject     _settingsPanel;
     [SerializeField] private GameObject     _creditsPanel;
     [SerializeField] private GameObject     _pauseMenuPanel;
+
+    private bool _isOnMainMenu = true;
 
     void Start()
     {
@@ -30,25 +32,30 @@ public class MainMenu : MonoBehaviour
         _playerMovement.enabled = true;
         _inGameUI.SetActive(true);
         _mainMenuPanel.SetActive(false);
+        _isOnMainMenu = false;
     }
 
-    public void Settings()
+    public void OpenSettings()
     {
         _settingsPanel.SetActive(true);
-        _mainMenuPanel.SetActive(false);
+
+        if (_mainMenuPanel.activeSelf)
+            _mainMenuPanel.SetActive(false);
+        else if (_pauseMenuPanel.activeSelf)
+            _pauseMenuPanel.SetActive(false);   
     }
 
     public void CloseSettings()
     {
         _settingsPanel.SetActive(false);
 
-        if (_pauseMenuPanel.activeSelf)
-            _mainMenuPanel.SetActive(false);
-        else
+        if (_isOnMainMenu)
             _mainMenuPanel.SetActive(true);
+        else if (!_isOnMainMenu)
+            _pauseMenuPanel.SetActive(true);
     }
 
-    public void Credits()
+    public void OpenCredits()
     {
         _creditsPanel.SetActive(true);
         _mainMenuPanel.SetActive(false);
@@ -65,17 +72,55 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void ResumeGame()
+    {
+        _pauseMenuPanel.SetActive(false);
+        _settingsPanel.SetActive(false);
+        _inGameUI.SetActive(true);
+        _playerMovement.enabled = true;
+    }
+
+    private void PauseGame()
+    {
+        _pauseMenuPanel.SetActive(true);
+        _inGameUI.SetActive(false);
+        _playerMovement.enabled = false;
+    }
+
+    public void GoToMainMenu()
+    {
+        _pauseMenuPanel.SetActive(false);
+        _mainMenuPanel.SetActive(true);
+        _playerMovement.enabled = false;
+        _inGameUI.SetActive(false);
+        _isOnMainMenu = true;
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_settingsPanel.activeSelf)
+            if (_isOnMainMenu)
             {
-                CloseSettings();
+                if (_creditsPanel.activeSelf)
+                {
+                    CloseCredits();
+                }
+                else if (_settingsPanel.activeSelf)
+                {
+                    CloseSettings();
+                }
             }
-            else if (_creditsPanel.activeSelf)
+            else if (!_isOnMainMenu)
             {
-                CloseCredits();
+                if (_pauseMenuPanel.activeSelf || _settingsPanel.activeSelf)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
         }
     }

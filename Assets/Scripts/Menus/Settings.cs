@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 
-public class SettingsMenu : MonoBehaviour
+public class Settings : MonoBehaviour
 {
     //[SerializeField] private AudioMixer audioMixer;
     [SerializeField] private TMP_Dropdown   _resolutionDropdown;
