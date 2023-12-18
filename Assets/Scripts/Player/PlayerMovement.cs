@@ -1,4 +1,5 @@
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
-        _head = GetComponentInChildren<Camera>().transform;
+        _head = GetComponentInChildren<CinemachineVirtualCamera>().transform;
     }
 
     private void OnEnable()
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         ShowCursor();
     }
 
-    private void HideCursor()
+    public void HideCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }

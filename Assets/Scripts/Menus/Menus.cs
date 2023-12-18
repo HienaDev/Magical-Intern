@@ -1,9 +1,13 @@
 using UnityEngine;
+using Cinemachine;
 
 public class Menus : MonoBehaviour
 {
-    [SerializeField] private Camera         _mainCamera;
-    [SerializeField] private Camera         _menuCamera;
+    [SerializeField] private CinemachineVirtualCamera _mainCamera;
+    [SerializeField] private CinemachineVirtualCamera _menuCamera;
+    [SerializeField] private GameObject     _objectToLookAt;
+    [SerializeField] private GameObject     _objectToResetTheMenuCamera;
+    [SerializeField] private GameObject     _originalObjectToLookAt;
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private GameObject     _inGameUI;
     [SerializeField] private GameObject     _mainMenuPanel;
@@ -24,15 +28,47 @@ public class Menus : MonoBehaviour
 
     public void Play()
     {
-        // TODO: Start Animation
+        _menuCamera.m_Follow = _playerMovement.transform;
+        _menuCamera.m_LookAt = _objectToLookAt.transform;
 
-        // TODO: After Animation:
-        _mainCamera.enabled =     true;
-        _menuCamera.enabled =     false;
+        _mainMenuPanel.SetActive(false);
+        _playerMovement.HideCursor();
+
+        Invoke("ChangeToGameCamera", 4.5f);
+    }
+
+    private void ChangeToGameCamera()
+    {
+        _mainCamera.enabled = true;
+        _menuCamera.enabled = false;
+
         _playerMovement.enabled = true;
         _inGameUI.SetActive(true);
-        _mainMenuPanel.SetActive(false);
         _isOnMainMenu = false;
+    }
+
+    private void ActivateMainMenu()
+    {
+        _mainMenuPanel.SetActive(true);
+    }
+
+    public void GoToMainMenu()
+    {
+        _menuCamera.m_Follow = _objectToResetTheMenuCamera.transform;
+        _menuCamera.m_LookAt = _originalObjectToLookAt.transform;
+
+        _mainCamera.enabled = false;
+        _menuCamera.enabled = true;
+
+        _pauseMenuPanel.SetActive(false);
+        _playerMovement.enabled = false;
+        _inGameUI.SetActive(false);
+        _isOnMainMenu = true;
+
+        _playerMovement.enabled = false;
+        _inGameUI.SetActive(false);
+
+        Invoke("ActivateMainMenu", 2f);
     }
 
     public void OpenSettings()
@@ -85,15 +121,6 @@ public class Menus : MonoBehaviour
         _pauseMenuPanel.SetActive(true);
         _inGameUI.SetActive(false);
         _playerMovement.enabled = false;
-    }
-
-    public void GoToMainMenu()
-    {
-        _pauseMenuPanel.SetActive(false);
-        _mainMenuPanel.SetActive(true);
-        _playerMovement.enabled = false;
-        _inGameUI.SetActive(false);
-        _isOnMainMenu = true;
     }
 
     public void Update()
