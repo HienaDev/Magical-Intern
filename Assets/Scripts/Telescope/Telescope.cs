@@ -10,17 +10,17 @@ public class Telescope : MonoBehaviour
 
     public void LookingAtTheTelescope()
     {
-        _isWatching = !_isWatching;
+        //_isWatching = !_isWatching;
 
-        if (_isWatching)
-        {
-            _telescopeVision.SetActive(true);
-            _playerMovement.enabled = false;
-        }
-        else
-        {
-            _telescopeVision.SetActive(false);
-            _playerMovement.enabled = true;
-        }
+        //if (_isWatching)
+        //{
+        //    _telescopeVision.SetActive(true);
+        //    _playerMovement.enabled = false;
+        //}
+        //else
+        //{
+        //    _telescopeVision.SetActive(false);
+        //    _playerMovement.enabled = true;
+        //}
     }
 }

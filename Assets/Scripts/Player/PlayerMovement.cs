@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _maxHeadUpAngle;
     [SerializeField] private float _minHeadDownAngle;
 
+    private bool moving;
+
     private CharacterController _characterController;
     private Transform           _head;
 
@@ -15,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         _head = GetComponentInChildren<CinemachineVirtualCamera>().transform;
+
+        moving = true;
     }
 
     private void OnEnable()
@@ -45,9 +49,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateRotation()
     {
-        UpdatePlayerRotation();
-        UpdateHeadRotation();
-        Move();
+        if (moving)
+        { 
+            UpdatePlayerRotation();
+            UpdateHeadRotation();
+            Move();
+        }
+        
     }
 
     private void UpdatePlayerRotation()
@@ -87,9 +95,18 @@ public class PlayerMovement : MonoBehaviour
         _verticalMouseSensitivity   = sensitivity;
     }
 
+    public void EnableMovement() => moving = true;
+
+    public void DisableMovement() => moving = false;
+
     public float GetSensitivity()
     {
         return _horizontalMouseSensitivity;
+    }
+
+    public float GetVerticalSensitivity()
+    {
+        return _verticalMouseSensitivity;
     }
 
     //private void FixedUpdate()
