@@ -68,6 +68,8 @@ public class Menus : MonoBehaviour
         _playerMovement.enabled = false;
         _inGameUI.SetActive(false);
 
+        Time.timeScale = 1f;
+
         Invoke("ActivateMainMenu", 2f);
     }
 
