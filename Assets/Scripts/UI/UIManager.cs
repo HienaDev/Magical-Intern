@@ -79,6 +79,11 @@ public class UIManager : MonoBehaviour
 
     public void ShowSelectedItemName(string itemName)
     {
+        if (itemName == null)
+            _inventorySelectedItemText.text = "";
+        else
+            itemName = itemName.Substring(0, 1).ToUpper() + itemName.Substring(1);
+            
         _inventorySelectedItemText.text = itemName;
     }
 }

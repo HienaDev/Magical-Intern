@@ -106,6 +106,6 @@ public class PlayerInventory : MonoBehaviour
         if (_selectedSlot != -1)
             _uiManager.ShowSelectedItemName(_inventory[_selectedSlot].inventoryName);
         else
-            _uiManager.ShowSelectedItemName("");
+            _uiManager.ShowSelectedItemName(null);
     }
 }
