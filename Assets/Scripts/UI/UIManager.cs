@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject         _interactionPanel;
     [SerializeField] private TextMeshProUGUI    _interactionMessage;
+    [SerializeField] private TextMeshProUGUI    _inventorySelectedItemText;
     [SerializeField] private Image[]            _inventorySlots;
     [SerializeField] private Image[]            _inventoryIcons;
     [SerializeField] private Color              _unselectedColor;
@@ -74,5 +75,10 @@ public class UIManager : MonoBehaviour
 
             _inventorySlots[index].color = color;
         }
+    }
+
+    public void ShowSelectedItemName(string itemName)
+    {
+        _inventorySelectedItemText.text = itemName;
     }
 }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
@@ -90,6 +89,7 @@ public class PlayerInventory : MonoBehaviour
     void Update()
     {
         CheckForPlayerSlotSelection();
+        UpdateCurrentSelectedItemName();
     }
 
     private void CheckForPlayerSlotSelection()
@@ -99,5 +99,13 @@ public class PlayerInventory : MonoBehaviour
                 SelectInventorySlot((_selectedSlot + 1) % _inventory.Count);
             else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
                 SelectInventorySlot((_selectedSlot - 1 + _inventory.Count) % _inventory.Count);
+    }
+
+    public void UpdateCurrentSelectedItemName()
+    {
+        if (_selectedSlot != -1)
+            _uiManager.ShowSelectedItemName(_inventory[_selectedSlot].inventoryName);
+        else
+            _uiManager.ShowSelectedItemName("");
     }
 }
