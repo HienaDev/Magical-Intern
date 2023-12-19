@@ -114,6 +114,7 @@ public class Menus : MonoBehaviour
         _settingsPanel.SetActive(false);
         _inGameUI.SetActive(true);
         _playerMovement.enabled = true;
+        Time.timeScale = 1f;
     }
 
     private void PauseGame()
@@ -121,6 +122,7 @@ public class Menus : MonoBehaviour
         _pauseMenuPanel.SetActive(true);
         _inGameUI.SetActive(false);
         _playerMovement.enabled = false;
+        Time.timeScale = 0f;
     }
 
     public void Update()
