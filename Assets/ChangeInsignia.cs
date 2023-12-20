@@ -40,4 +40,6 @@ public class ChangeInsignia : MonoBehaviour
 
     public void ActivateShine() => shining = true;
 
+    public Material GetMaterial() => ballMesh.material;
+
 }

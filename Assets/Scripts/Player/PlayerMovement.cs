@@ -13,12 +13,16 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController _characterController;
     private Transform           _head;
 
+    private bool cameraMoving;
+
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
         _head = GetComponentInChildren<CinemachineVirtualCamera>().transform;
 
         moving = true;
+
+        cameraMoving = true;
     }
 
     private void OnEnable()
