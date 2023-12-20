@@ -4772,6 +4772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 1626779802}
   _menuCamera: {fileID: 877479428}
+  _cinemachineBrain: {fileID: 967934814}
   _objectToLookAt: {fileID: 111434145}
   _objectToResetTheMenuCamera: {fileID: 1250595765}
   _originalObjectToLookAt: {fileID: 458771664}
@@ -30832,7 +30833,7 @@ GameObject:
   - component: {fileID: 967934815}
   - component: {fileID: 967934814}
   m_Layer: 2
-  m_Name: Main Camera
+  m_Name: Camera Brain
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

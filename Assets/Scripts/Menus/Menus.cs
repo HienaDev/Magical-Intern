@@ -5,15 +5,16 @@ public class Menus : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera _mainCamera;
     [SerializeField] private CinemachineVirtualCamera _menuCamera;
-    [SerializeField] private GameObject     _objectToLookAt;
-    [SerializeField] private GameObject     _objectToResetTheMenuCamera;
-    [SerializeField] private GameObject     _originalObjectToLookAt;
-    [SerializeField] private PlayerMovement _playerMovement;
-    [SerializeField] private GameObject     _inGameUI;
-    [SerializeField] private GameObject     _mainMenuPanel;
-    [SerializeField] private GameObject     _settingsPanel;
-    [SerializeField] private GameObject     _creditsPanel;
-    [SerializeField] private GameObject     _pauseMenuPanel;
+    [SerializeField] private CinemachineBrain         _cinemachineBrain;
+    [SerializeField] private GameObject               _objectToLookAt;
+    [SerializeField] private GameObject               _objectToResetTheMenuCamera;
+    [SerializeField] private GameObject               _originalObjectToLookAt;
+    [SerializeField] private PlayerMovement           _playerMovement;
+    [SerializeField] private GameObject               _inGameUI;
+    [SerializeField] private GameObject               _mainMenuPanel;
+    [SerializeField] private GameObject               _settingsPanel;
+    [SerializeField] private GameObject               _creditsPanel;
+    [SerializeField] private GameObject               _pauseMenuPanel;
 
     private bool _isOnMainMenu = true;
 
@@ -34,7 +35,7 @@ public class Menus : MonoBehaviour
         _mainMenuPanel.SetActive(false);
         _playerMovement.HideCursor();
 
-        Invoke("ChangeToGameCamera", 4.5f);
+        Invoke("ChangeToGameCamera", 4f);
     }
 
     private void ChangeToGameCamera()
@@ -42,9 +43,15 @@ public class Menus : MonoBehaviour
         _mainCamera.enabled = true;
         _menuCamera.enabled = false;
 
+        Invoke("ActivatePlayerMovementAndUI", _cinemachineBrain.m_DefaultBlend.m_Time);
+
+        _isOnMainMenu = false;
+    }
+
+    private void ActivatePlayerMovementAndUI()
+    {
         _playerMovement.enabled = true;
         _inGameUI.SetActive(true);
-        _isOnMainMenu = false;
     }
 
     private void ActivateMainMenu()
