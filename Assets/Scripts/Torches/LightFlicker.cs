@@ -14,14 +14,14 @@ public class LightFlicker : MonoBehaviour
     private float justMoved;
     private float startingIntensity;
     private Vector3 startingPosition;
-    private Light light;
+    private Light lightTorch;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        light = GetComponent<Light>();   
-        startingIntensity = light.intensity;
+        lightTorch = GetComponent<Light>();   
+        startingIntensity = lightTorch.intensity;
         startingPosition = gameObject.transform.position;
     }
 
@@ -31,12 +31,11 @@ public class LightFlicker : MonoBehaviour
         if (Time.time - justFlicked > timerFlicker)
         {
             justFlicked = Time.time;
-            light.intensity = startingIntensity + Random.Range(-intensityChange, intensityChange);
+            lightTorch.intensity = startingIntensity + Random.Range(-intensityChange, intensityChange);
         }
 
         if (Time.time - justMoved > timerPosition)
         {
-            Debug.Log("moved");
             justMoved = Time.time;
             gameObject.transform.position = new Vector3(startingPosition.x + Random.Range(-positionChange, positionChange), startingPosition.y, startingPosition.z);
         }

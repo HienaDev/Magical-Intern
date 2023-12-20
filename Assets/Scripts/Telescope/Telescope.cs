@@ -6,7 +6,7 @@ public class Telescope : MonoBehaviour
     [SerializeField] private GameObject     _telescopeVision;
     [SerializeField] private PlayerMovement _playerMovement;
 
-    private bool _isWatching = false;
+    //private bool _isWatching = false;
 
     public void LookingAtTheTelescope()
     {

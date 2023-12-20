@@ -29,7 +29,7 @@ public class RotateTelescope : MonoBehaviour
     {
         if (rotating && Input.GetKeyUp(KeyCode.E))
         {
-            Debug.Log("pressed");
+            //Debug.Log("pressed");
             rotating = false;
             playerScript.EnableMovement();
         }
@@ -52,7 +52,7 @@ public class RotateTelescope : MonoBehaviour
 
             rotateVertical.transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * _verticalMouseSensitivity);
 
-            Debug.Log(rotateHorizontal.transform.rotation);
+            //Debug.Log(rotateHorizontal.transform.rotation);
 
             //Debug.Log(rotationH.x);
 
