@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c6e75bb832ef1b40bd68021cd0db586, type: 3}
-  m_Name: Small Key
+  m_Name: Massive Key
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
-  inventoryName: key
+  inventoryName: massive key
   inventoryIcon: {fileID: 21300000, guid: dcefedb1a2b276c4ebc0d2184f19c158, type: 3}
   requirements: []
   requirementsMessage: 
