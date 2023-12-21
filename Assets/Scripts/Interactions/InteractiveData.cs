@@ -7,6 +7,7 @@ public class InteractiveData : ScriptableObject
 
     public Type                 type;
     public bool                 startsOn = true;
+    public bool                 usable = false;
     public string               inventoryName;
     public Sprite               inventoryIcon;
     public InteractiveData[]    requirements;

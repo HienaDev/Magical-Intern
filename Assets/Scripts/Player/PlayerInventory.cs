@@ -77,7 +77,6 @@ public class PlayerInventory : MonoBehaviour
 
     public bool IsSelected(Interactive item)
     {
-
         return _selectedSlot != -1 && _inventory[_selectedSlot] == item;
     }
 
@@ -89,6 +88,7 @@ public class PlayerInventory : MonoBehaviour
     void Update()
     {
         CheckForPlayerSlotSelection();
+        CheckIfTheItemIsUsable();
         UpdateCurrentSelectedItemName();
     }
 
@@ -107,5 +107,18 @@ public class PlayerInventory : MonoBehaviour
             _uiManager.ShowSelectedItemName(_inventory[_selectedSlot].inventoryName);
         else
             _uiManager.ShowSelectedItemName(null);
+    }
+
+    public void CheckIfTheItemIsUsable()
+    {
+        if (_selectedSlot != -1 && _inventory[_selectedSlot].isUsable)
+            _uiManager.ShowTextForUsableItem(_selectedSlot, _inventory[_selectedSlot]);
+        else
+            _uiManager.ShowTextForUsableItem(-1, null);
+    }
+
+    public void SelectedItemHaveChanged()
+    {
+        _playerInteraction.ForceRefreshCurrentInteractive();
     }
 }
