@@ -19,6 +19,7 @@ public class Interactive : MonoBehaviour
     
     
     public bool isOn;
+    public bool isUsable;
     public UnityEvent onPicked;
     public UnityEvent onRequirementsMet;
     public UnityEvent onInteracted;
@@ -47,18 +48,19 @@ public class Interactive : MonoBehaviour
     {
         if(_interactionManager == null)
         { 
-        _interactionManager = InteractionManager.instance;
-        _playerInventory    = _interactionManager.playerInventory;
-        _requirements       = new List<Interactive>();
-        _dependents         = new List<Interactive>();
-        _animator           = GetComponent<Animator>();
-        _outline            = GetComponent<Outline>();
-        _requirementsMet    = _interactiveData.requirements.Length == 0;
-        _interactionCount   = 0;
+            _interactionManager = InteractionManager.instance;
+            _playerInventory    = _interactionManager.playerInventory;
+            _requirements       = new List<Interactive>();
+            _dependents         = new List<Interactive>();
+            _animator           = GetComponent<Animator>();
+            _outline            = GetComponent<Outline>();
+            _requirementsMet    = _interactiveData.requirements.Length == 0;
+            _interactionCount   = 0;
 
-        isOn = _interactiveData.startsOn;
+            isOn =     _interactiveData.startsOn;
+            isUsable = _interactiveData.usable;
 
-        _interactionManager.RegisterInteractive(this);
+            _interactionManager.RegisterInteractive(this);
         }
     }
 
@@ -202,5 +204,4 @@ public class Interactive : MonoBehaviour
     public string GetInteractiveName() => _interactiveData.name;
 
     public void SetInteractiveData(InteractiveData interactiveD) => _interactiveData = interactiveD;
-
 }

@@ -42,7 +42,8 @@ public class UseInventoryItems : MonoBehaviour
     public void CanUseGlasses()
     {
         _canUseGlasses = true;
-        _glassesData.inventoryName = "magical glasses";
+        _glasses.isUsable = true;
+        _glasses.SetInteractiveData(_glassesData);
     }
 
     void Update()

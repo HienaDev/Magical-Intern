@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject         _interactionPanel;
     [SerializeField] private TextMeshProUGUI    _interactionMessage;
     [SerializeField] private TextMeshProUGUI    _inventorySelectedItemText;
+    [SerializeField] private TextMeshProUGUI    _inventoryUsableItemText;
     [SerializeField] private Image[]            _inventorySlots;
     [SerializeField] private Image[]            _inventoryIcons;
     [SerializeField] private Color              _unselectedColor;
@@ -85,5 +86,18 @@ public class UIManager : MonoBehaviour
             itemName = itemName.Substring(0, 1).ToUpper() + itemName.Substring(1);
             
         _inventorySelectedItemText.text = itemName;
+    }
+
+    public void ShowTextForUsableItem(int index, Interactive interactive)
+    {
+        if (interactive == null || interactive.isUsable == false || index == -1)
+        {
+            _inventoryUsableItemText.enabled = false;
+        }
+        else if (interactive.isUsable)
+        {
+            _inventoryUsableItemText.rectTransform.position = _inventoryIcons[index].rectTransform.position;
+            _inventoryUsableItemText.enabled = true;
+        }
     }
 }

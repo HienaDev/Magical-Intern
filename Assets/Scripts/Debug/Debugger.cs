@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Debugger : MonoBehaviour
 {
-    [SerializeField] private UseInventoryItems _magicGlassesScriptReference;
     [SerializeField] private GameObject        _glasses;
     [SerializeField] private GameObject        _chessPiece;
     [SerializeField] private GameObject        _cheese;
@@ -10,11 +9,13 @@ public class Debugger : MonoBehaviour
     [SerializeField] private GameObject        _key;
     [SerializeField] private GameObject        _memoryPotion;
 
-    private PlayerInventory _playerInventory;
+    private PlayerInventory   _playerInventory;
+    private UseInventoryItems _magicGlassesScriptReference;
 
     private void Start()
     {
         _playerInventory = GetComponent<PlayerInventory>();
+        _magicGlassesScriptReference = GetComponent<UseInventoryItems>();
     }
 
     void Update()
