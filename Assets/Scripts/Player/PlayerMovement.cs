@@ -9,11 +9,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _minHeadDownAngle;
 
     private bool moving;
+    private bool hasSpeed;
 
     private CharacterController _characterController;
     private Transform           _head;
 
-    private bool cameraMoving;
 
     private void Start()
     {
@@ -21,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
         _head = GetComponentInChildren<CinemachineVirtualCamera>().transform;
 
         moving = true;
+        hasSpeed = false;
 
-        cameraMoving = true;
     }
 
     private void OnEnable()
@@ -88,6 +88,13 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Forward") * 5f  * Time.deltaTime;
         float z = Input.GetAxis("Strafe")  * 5f * Time.deltaTime;
 
+        if (x != 0 || z != 0)
+        {
+            hasSpeed = true;
+        }
+        else
+            hasSpeed = false;
+
         Vector3 move = transform.right * z + transform.forward * x;
 
         _characterController.Move(move);
@@ -112,6 +119,8 @@ public class PlayerMovement : MonoBehaviour
     {
         return _verticalMouseSensitivity;
     }
+
+    public bool GetHasSpeed() => hasSpeed;
 
     //private void FixedUpdate()
     //{
