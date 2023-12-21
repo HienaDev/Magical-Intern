@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject         _interactionPanel;
     [SerializeField] private TextMeshProUGUI    _interactionMessage;
     [SerializeField] private TextMeshProUGUI    _inventorySelectedItemText;
-    [SerializeField] private TextMeshProUGUI    _inventoryUsableItemText;
+    [SerializeField] private GameObject         _inventoryUsableItem;
     [SerializeField] private Image[]            _inventorySlots;
     [SerializeField] private Image[]            _inventoryIcons;
     [SerializeField] private Color              _unselectedColor;
@@ -92,12 +92,15 @@ public class UIManager : MonoBehaviour
     {
         if (interactive == null || interactive.isUsable == false || index == -1)
         {
-            _inventoryUsableItemText.enabled = false;
+            _inventoryUsableItem.SetActive(false);
         }
         else if (interactive.isUsable)
         {
-            _inventoryUsableItemText.rectTransform.position = _inventoryIcons[index].rectTransform.position;
-            _inventoryUsableItemText.enabled = true;
+            RectTransform rectTransform = _inventoryUsableItem.GetComponent<RectTransform>();
+
+            rectTransform.anchoredPosition = new Vector2(_inventorySlots[index].rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
+            
+            _inventoryUsableItem.SetActive(true);
         }
     }
 }
