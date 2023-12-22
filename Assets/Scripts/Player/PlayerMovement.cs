@@ -54,11 +54,13 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateRotation()
     {
         if (moving)
-        { 
+        {
             UpdatePlayerRotation();
             UpdateHeadRotation();
             Move();
         }
+        else
+            hasSpeed = false;
         
     }
 
