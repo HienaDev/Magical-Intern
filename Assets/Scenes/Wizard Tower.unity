@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.105531015, g: 0.12274205, b: 0.33915207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -34167,7 +34167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dont forget\nto feed the \nbird at\n12:30"
+  m_text: "Don't forget\nto feed the \nbird at\n12:30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa08929bfb5e6d4c9e724cabaa39fb6, type: 2}
   m_sharedMaterial: {fileID: -4919194409040665743, guid: 3aa08929bfb5e6d4c9e724cabaa39fb6, type: 2}
