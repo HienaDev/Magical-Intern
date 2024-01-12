@@ -10,16 +10,21 @@ public class PlayerInventory : MonoBehaviour
     private List<Interactive>   _inventory;
     private int                 _selectedSlot;
 
+    private PlayerSounds _sounds;
+
     void Start()
     {
         _playerInteraction  = GetComponent<PlayerInteraction>();
         _inventory          = new List<Interactive>();
         _selectedSlot       = -1;
+        _sounds = GetComponent<PlayerSounds>();
     }
 
     public void Add(Interactive item)
     {
         _inventory.Add(item);
+
+        _sounds.PlayPickUpSound();
 
         _uiManager.ShowInventoryIcon(_inventory.Count - 1, item.inventoryIcon);
         _uiManager.ShowInventorySlot(_inventory.Count - 1);

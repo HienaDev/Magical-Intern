@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerSounds : MonoBehaviour
 {
     [SerializeField] private AudioClip[] stepsSound;
-    private AudioSource audioSource;
+    private AudioSource audioSourceSteps;
+
+    [SerializeField] private AudioClip pickUpSound;
+    private AudioSource audioSourcePickUp;
 
     [SerializeField] private float timeBetweenSteps;
 
@@ -18,12 +21,19 @@ public class PlayerSounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSourceSteps = gameObject.AddComponent<AudioSource>();
+        audioSourcePickUp = gameObject.AddComponent<AudioSource>();
+
+        audioSourcePickUp.spatialBlend = 1;
+        audioSourceSteps.spatialBlend = 1;
+
+        audioSourcePickUp.volume = 0.2f;
+        audioSourceSteps.volume = 0.2f;
 
         playerScript = GetComponent<PlayerMovement>();
 
         justStep = timeBetweenSteps;
-
+            
 
 
     }
@@ -46,8 +56,15 @@ public class PlayerSounds : MonoBehaviour
 
     public void PlayStepsSound()
     {
-        audioSource.clip = stepsSound[Random.Range(0, stepsSound.Length)];
+        audioSourceSteps.clip = stepsSound[Random.Range(0, stepsSound.Length)];
 
-        audioSource.Play();
+        audioSourceSteps.Play();
+    }
+
+    public void PlayPickUpSound()
+    {
+        audioSourcePickUp.clip = pickUpSound;
+
+        audioSourcePickUp.Play();
     }
 }
