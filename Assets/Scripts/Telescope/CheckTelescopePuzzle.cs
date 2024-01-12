@@ -9,7 +9,7 @@ public class CheckTelescopePuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Hello");
+        
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 2, Color.red);
 
         RaycastHit hit;
@@ -17,7 +17,7 @@ public class CheckTelescopePuzzle : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, insigniaMask))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log(hit.collider.gameObject.name);
+            
 
             hit.collider.gameObject.GetComponent<ChangeInsignia>().ActivateShine();
 

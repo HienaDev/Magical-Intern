@@ -25,7 +25,7 @@ public class PlayerSounds : MonoBehaviour
         justStep = timeBetweenSteps;
 
 
-        Debug.Log("step");
+
     }
 
 
@@ -37,7 +37,7 @@ public class PlayerSounds : MonoBehaviour
             if (playerScript.GetHasSpeed())
             {
                 PlayStepsSound();
-                Debug.Log("step");
+
             }
         }
     }
