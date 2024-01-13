@@ -11,6 +11,8 @@ public class Settings : MonoBehaviour
     [SerializeField] private TMP_Dropdown   _resolutionDropdown;
     [SerializeField] private Slider         _sensitivitySlider;
     [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private AudioMixer     _playerAudioMixer;
+    [SerializeField] private AudioMixer     _roomAudioMixer;
 
     private Resolution[] _resolutions;
 
@@ -65,5 +67,11 @@ public class Settings : MonoBehaviour
     public void SetSensitive(float sensitivity)
     {
         _playerMovement.SetSensitivity(sensitivity);
+    }
+
+    public void SetVolume(float volume)
+    {
+        _playerAudioMixer.SetFloat("Volume", volume);
+        _roomAudioMixer.SetFloat("Volume", volume);
     }
 }
