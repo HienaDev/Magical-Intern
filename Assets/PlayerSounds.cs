@@ -25,7 +25,9 @@ public class PlayerSounds : MonoBehaviour
     void Start()
     {
         audioSourceSteps = gameObject.AddComponent<AudioSource>();
+        audioSourceSteps.outputAudioMixerGroup = stepsMixer;
         audioSourcePickUp = gameObject.AddComponent<AudioSource>();
+        audioSourcePickUp.outputAudioMixerGroup = pickUpMixer;
 
         audioSourcePickUp.spatialBlend = 1;
         audioSourceSteps.spatialBlend = 1;
