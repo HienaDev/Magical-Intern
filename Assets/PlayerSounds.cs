@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerSounds : MonoBehaviour
 {
     [SerializeField] private AudioClip[] stepsSound;
     private AudioSource audioSourceSteps;
+    [SerializeField] private AudioMixerGroup stepsMixer;
 
     [SerializeField] private AudioClip pickUpSound;
     private AudioSource audioSourcePickUp;
+    [SerializeField] private AudioMixerGroup pickUpMixer;
 
     [SerializeField] private float timeBetweenSteps;
 
