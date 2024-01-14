@@ -13,12 +13,18 @@ public class ChangeInsignia : MonoBehaviour
     [SerializeField] private GameObject ball;
     private MeshRenderer ballMesh;
 
+    private AudioSource _shineSound;
+    private float _defaultVolume;
+
     // Start is called before the first frame update
     void Start()
     {
         shining = false;
 
         ballMesh = ball.GetComponent<MeshRenderer>();
+
+        _shineSound = GetComponent<AudioSource>();
+        _defaultVolume = _shineSound.volume;
     }
 
     // Update is called once per frame
@@ -27,10 +33,12 @@ public class ChangeInsignia : MonoBehaviour
 
         if (shining)
         {
+            _shineSound.volume = _defaultVolume;
             ballMesh.material = blueBallShining;
         }
         else
         {
+            _shineSound.volume = 0f;
             ballMesh.material = blueBallDefault;
         }
 
