@@ -104,6 +104,11 @@ public class Menus : MonoBehaviour
     {
         _creditsPanel.SetActive(true);
         _mainMenuPanel.SetActive(false);
+
+        if (!_isOnMainMenu)
+        {
+            _inGameUI.SetActive(false);
+        }
     }
 
     public void CloseCredits()

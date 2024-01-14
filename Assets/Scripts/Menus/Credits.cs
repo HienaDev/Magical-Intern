@@ -16,5 +16,6 @@ public class Credits : MonoBehaviour
     public void Finished()
     {
         _menusScript.CloseCredits();
+        _menusScript.GoToMainMenu();
     }
 }
