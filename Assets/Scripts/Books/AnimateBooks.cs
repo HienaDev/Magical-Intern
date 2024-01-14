@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AnimateBooks : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class AnimateBooks : MonoBehaviour
     private float rotation;
     private int rotations;
 
+    [SerializeField] private UnityEvent _bookSelect;
+
+    private AudioSource _floatingSound;
+
+
     private void Start()
     {
         _initialPositionX = transform.localPosition.x;
@@ -40,10 +46,14 @@ public class AnimateBooks : MonoBehaviour
         rotation = 0.2f;
 
         rotations = 0;
+
+        _floatingSound = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
     {
+        _floatingSound.enabled = swapping;
+
         if (_selected)
         {
             _auxPosition.x -= _movementIncrement;
@@ -60,6 +70,7 @@ public class AnimateBooks : MonoBehaviour
 
         if (swapping)
         {
+
             Floating();
 
             if (_auxPosition.z < _newPosition.z)
@@ -86,17 +97,20 @@ public class AnimateBooks : MonoBehaviour
             }
             else
             {
+                
                 swapping = false;
+                
             }
         }
 
-  
+       
 
         transform.localPosition = _auxPosition;
     }
 
     public void BookSelect()
     {
+        _bookSelect.Invoke();
         _selected = true;
         _collider.enabled = false;
     }
@@ -114,6 +128,7 @@ public class AnimateBooks : MonoBehaviour
 
     public void Floating()
     {
+
         if (_auxPosition.y < _initialPositionY + _floatingHeight && goingUp)
         {
             _auxPosition.y += _floatingSpeed;
