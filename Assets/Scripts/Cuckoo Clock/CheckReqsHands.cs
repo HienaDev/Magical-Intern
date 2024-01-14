@@ -16,6 +16,8 @@ public class CheckReqsHands : MonoBehaviour
         if (_minuteHand.RightPosition == true && _hourHand.RightPosition == true)
         {
             _cuckooAnimator.SetTrigger("Cuckoo");
+            _minuteHand.gameObject.GetComponent<Animator>().SetTrigger("Solved");
+            _hourHand.gameObject.GetComponent<Animator>().SetTrigger("Solved");
         }
     }
 }
