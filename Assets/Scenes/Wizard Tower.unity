@@ -58997,6 +58997,7 @@ MonoBehaviour:
   _magicGlassesVision: {fileID: 126978251}
   _sequenceClue: {fileID: 1886761694}
   _shinyMaterial: {fileID: 2100000, guid: 8a52e6dccd310d741b513c38e462cfb9, type: 2}
+  _cauldronScriptable: {fileID: 11400000, guid: 40de15400ac81c44d9cf0a7b617d4508, type: 2}
 --- !u!95 &1712892188
 Animator:
   serializedVersion: 5

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   startsOn: 1
+  usable: 0
   inventoryName: 
   inventoryIcon: {fileID: 0}
   requirements: []
   requirementsMessage: 
-  interactionMessages: []
+  interactionMessages:
+  - The recipe isn't ready yet

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PutIngredientsOnCauldron : MonoBehaviour
@@ -13,9 +14,23 @@ public class PutIngredientsOnCauldron : MonoBehaviour
 
     [SerializeField] private Material _shinyMaterial;
 
-    private bool _position1;
-    private bool _position2;
-    private bool _position3;
+    [SerializeField] private InteractiveData _cauldronScriptable;
+    //[SerializeField] private InteractiveData _cauldronScriptable;
+
+    private void Update()
+    {
+        if (_playerInventory.Contains(_glasses.GetComponent<Interactive>()) &&
+            _playerInventory.Contains(_cheese.GetComponent<Interactive>()) &&
+            _playerInventory.Contains(_hourglass.GetComponent<Interactive>()) &&
+            _insignia.GetMaterial().color == _shinyMaterial.color)
+        {
+            _cauldronScriptable.interactionMessages[0] = "Create potion";
+        }
+        else
+        {
+            _cauldronScriptable.interactionMessages[0] = "The recipe isn't ready yet";
+        }
+    }
 
     public void PutIngredientIn()
     {
@@ -42,8 +57,7 @@ public class PutIngredientsOnCauldron : MonoBehaviour
             _hourglass.GetComponent<Animator>().SetTrigger("GoCauldron");
             gameObject.GetComponent<Animator>().SetTrigger("GoCauldron");
         }
-        else
-            return;
+        
 
     }
 
