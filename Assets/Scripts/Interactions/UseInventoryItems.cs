@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UseInventoryItems : MonoBehaviour
 {
@@ -53,7 +52,7 @@ public class UseInventoryItems : MonoBehaviour
             if (_playerInventory.IsSelected(_memoryPotion))
                 UseMemoryPotion();
 
-            if (_playerInventory.IsSelected(_glasses))
+            else if (_playerInventory.IsSelected(_glasses))
                 UseGlasses(_canUseGlasses);
         }
     }

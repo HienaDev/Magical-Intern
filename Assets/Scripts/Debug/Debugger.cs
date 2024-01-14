@@ -21,39 +21,51 @@ public class Debugger : MonoBehaviour
     void Update()
     {
         if (!_playerInventory.IsFull())
-        {
-            // Get small magical glasses
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha1))
+        {   
+            // Get glasses (max 1)
+            if (Input.GetKey(KeyCode.LeftShift) && 
+                Input.GetKeyDown(KeyCode.Alpha1) && 
+                !_playerInventory.Contains(_glasses.GetComponent<Interactive>()))
             {
                 _playerInventory.Add(_glasses.GetComponent<Interactive>());
             }
 
-            // Get chess piece
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha2))
+            // Get chess piece (max 4)
+            if (Input.GetKey(KeyCode.LeftShift) && 
+                Input.GetKeyDown(KeyCode.Alpha2) && 
+                _playerInventory.GetItemCount(_chessPiece.GetComponent<Interactive>()) < 4)
             {
                 _playerInventory.Add(_chessPiece.GetComponent<Interactive>());
             }
 
-            // Get cheese
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha3))
+            // Get cheese (max 1)
+            if (Input.GetKey(KeyCode.LeftShift) && 
+                Input.GetKeyDown(KeyCode.Alpha3) &&
+                !_playerInventory.Contains(_cheese.GetComponent<Interactive>()))
             {
                 _playerInventory.Add(_cheese.GetComponent<Interactive>());
             }
 
-            // Get hourglass
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha4))
+            // Get hourglass (max 1)
+            if (Input.GetKey(KeyCode.LeftShift) && 
+                Input.GetKeyDown(KeyCode.Alpha4) &&
+                !_playerInventory.Contains(_hourglass.GetComponent<Interactive>()))
             {
                 _playerInventory.Add(_hourglass.GetComponent<Interactive>());
             }
 
-            // Get memory potion
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha5))
+            // Get memory potion (max 1)
+            if (Input.GetKey(KeyCode.LeftShift) && 
+                Input.GetKeyDown(KeyCode.Alpha5) &&
+                !_playerInventory.Contains(_memoryPotion.GetComponent<Interactive>()))
             {
                 _playerInventory.Add(_memoryPotion.GetComponent<Interactive>());
             }
 
-            // Get key
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha6))
+            // Get  key (max 1)
+            if (Input.GetKey(KeyCode.LeftShift) && 
+                Input.GetKeyDown(KeyCode.Alpha6) &&
+                !_playerInventory.Contains(_key.GetComponent<Interactive>()))
             {
                 _playerInventory.Add(_key.GetComponent<Interactive>());
             }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CountInteractions : MonoBehaviour
@@ -21,14 +19,6 @@ public class CountInteractions : MonoBehaviour
 
     public void CheckReqs()
     {
-        if (_interactive.GetInteractionCount() % _rightPosition == _numberOfInteractions)
-        {
-            RightPosition = true;
-        }
-        else
-        {
-            RightPosition = false;
-        }
-
+        RightPosition = _interactive.GetInteractionCount() % _rightPosition == _numberOfInteractions;
     }
 }
