@@ -15,21 +15,22 @@ public class PutIngredientsOnCauldron : MonoBehaviour
     [SerializeField] private Material _shinyMaterial;
 
     [SerializeField] private InteractiveData _cauldronScriptable;
-    //[SerializeField] private InteractiveData _cauldronScriptable;
+    private bool _solved = false;
 
     private void Update()
     {
-        if (_playerInventory.Contains(_glasses.GetComponent<Interactive>()) &&
-            _playerInventory.Contains(_cheese.GetComponent<Interactive>()) &&
-            _playerInventory.Contains(_hourglass.GetComponent<Interactive>()) &&
-            _insignia.GetMaterial().color == _shinyMaterial.color)
-        {
-            _cauldronScriptable.interactionMessages[0] = "Create potion";
-        }
-        else
-        {
-            _cauldronScriptable.interactionMessages[0] = "The recipe isn't ready yet";
-        }
+        if(!_solved)
+            if (_playerInventory.Contains(_glasses.GetComponent<Interactive>()) &&
+                _playerInventory.Contains(_cheese.GetComponent<Interactive>()) &&
+                _playerInventory.Contains(_hourglass.GetComponent<Interactive>()) &&
+                _insignia.GetMaterial().color == _shinyMaterial.color)
+            {
+                _cauldronScriptable.interactionMessages[0] = "Create potion";
+            }
+            else
+            {
+                _cauldronScriptable.interactionMessages[0] = "The recipe isn't ready yet";
+            }
     }
 
     public void PutIngredientIn()
@@ -56,6 +57,10 @@ public class PutIngredientsOnCauldron : MonoBehaviour
             _cheese.GetComponent<Animator>().SetTrigger("GoCauldron");
             _hourglass.GetComponent<Animator>().SetTrigger("GoCauldron");
             gameObject.GetComponent<Animator>().SetTrigger("GoCauldron");
+
+            gameObject.GetComponent<Outline>().OutlineWidth = 0.001f;
+            _cauldronScriptable.interactionMessages[0] = "";
+            _solved = true;
         }
         
 
