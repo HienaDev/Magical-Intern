@@ -13,6 +13,7 @@ public class Settings : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private AudioMixer     _playerAudioMixer;
     [SerializeField] private AudioMixer     _roomAudioMixer;
+    [SerializeField] private AudioMixer     _uIAudioMixer;
 
     private Resolution[] _resolutions;
 
@@ -73,5 +74,6 @@ public class Settings : MonoBehaviour
     {
         _playerAudioMixer.SetFloat("Volume", volume);
         _roomAudioMixer.SetFloat("Volume", volume);
+        _uIAudioMixer.SetFloat("Volume", volume);
     }
 }

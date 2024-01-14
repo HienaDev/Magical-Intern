@@ -17,6 +17,7 @@ public class Menus : MonoBehaviour
     [SerializeField] private GameObject               _pauseMenuPanel;
 
     private bool _isOnMainMenu = true;
+    private bool _finalCredits = false;
 
     void Start()
     {
@@ -108,6 +109,7 @@ public class Menus : MonoBehaviour
         if (!_isOnMainMenu)
         {
             _inGameUI.SetActive(false);
+            _finalCredits = true;
         }
     }
 
@@ -143,7 +145,7 @@ public class Menus : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_isOnMainMenu)
+            if (_isOnMainMenu && !_finalCredits)
             {
                 if (_creditsPanel.activeSelf)
                 {
@@ -154,7 +156,7 @@ public class Menus : MonoBehaviour
                     CloseSettings();
                 }
             }
-            else if (!_isOnMainMenu)
+            else if (!_isOnMainMenu && !_finalCredits)
             {
                 if (_pauseMenuPanel.activeSelf || _settingsPanel.activeSelf)
                 {
@@ -166,5 +168,12 @@ public class Menus : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void EndOfFinalCredits()
+    {
+        _finalCredits = false;
+
+        Debug.Log("End of final credits");
     }
 }

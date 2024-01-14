@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
+  usable: 0
   inventoryName: small magical glasses
-  inventoryIcon: {fileID: 21300000, guid: 55fd04a7afbbcab49b33911380e6b8fc, type: 3}
+  inventoryIcon: {fileID: 21300000, guid: 4099e4d4a3387c34bbc3979eb2812a87, type: 3}
   requirements: []
   requirementsMessage: Pick up %
   interactionMessages: []
