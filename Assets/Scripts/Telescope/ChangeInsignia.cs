@@ -16,6 +16,8 @@ public class ChangeInsignia : MonoBehaviour
     private AudioSource _shineSound;
     private float _defaultVolume;
 
+    [SerializeField] private PutIngredientsOnCauldron _cauldron;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,7 @@ public class ChangeInsignia : MonoBehaviour
     void Update()
     {
 
-        if (shining)
+        if (shining && !_cauldron.GetSolved())
         {
             _shineSound.volume = _defaultVolume;
             ballMesh.material = blueBallShining;
@@ -49,5 +51,7 @@ public class ChangeInsignia : MonoBehaviour
     public void ActivateShine() => shining = true;
 
     public Material GetMaterial() => ballMesh.material;
+
+
 
 }

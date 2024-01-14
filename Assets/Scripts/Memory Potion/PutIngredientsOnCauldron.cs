@@ -67,4 +67,6 @@ public class PutIngredientsOnCauldron : MonoBehaviour
     }
 
     public void TriggerPotion() => _memoryPotion.SetActive(true);
+
+    public bool GetSolved() => _solved;
 }

@@ -62,8 +62,6 @@ public class AnimateBooks : MonoBehaviour
         if(_auxPosition.x < _finalPosition)
         {
             _selected = false;
-            Debug.Log("1:" + (_auxPosition.y < _initialPositionY + _floatingHeight));
-            Debug.Log("2:" + (_auxPosition.y > _initialPositionY - _floatingHeight));
 
             Floating();
         }
