@@ -69,6 +69,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (index != _selectedSlot)
         {
+            _sounds.PlayScrollSound();
             _selectedSlot = index;
             _uiManager.SelectInventorySlot(index);
             _playerInteraction.ForceRefreshCurrentInteractive();

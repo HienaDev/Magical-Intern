@@ -2657,16 +2657,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6680caaa9b149274cb0c7a6470932449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepsSound:
+  _stepsSound:
   - {fileID: 8300000, guid: d51b558464f9ca443b5d93f9266f5e96, type: 3}
   - {fileID: 8300000, guid: 6878ad27437f00e4a8143c5107e55511, type: 3}
   - {fileID: 8300000, guid: eb0bdeba7166f4c44b976a96bf29c6d4, type: 3}
   - {fileID: 8300000, guid: 44568ed3ea05f7746b0c5da0deda621c, type: 3}
   - {fileID: 8300000, guid: 5a1435229cc10ac4c8d13e458fceeee9, type: 3}
-  stepsMixer: {fileID: -2270288567838538849, guid: e948e6bdba26a7549ba181b7efda6278, type: 2}
-  pickUpSound: {fileID: 8300000, guid: 0d1de5e608deacc47977585950d864e4, type: 3}
-  pickUpMixer: {fileID: -4669352540701254758, guid: e948e6bdba26a7549ba181b7efda6278, type: 2}
-  timeBetweenSteps: 0.5
+  _stepsMixer: {fileID: -2270288567838538849, guid: e948e6bdba26a7549ba181b7efda6278, type: 2}
+  _pickUpSound: {fileID: 8300000, guid: 0d1de5e608deacc47977585950d864e4, type: 3}
+  _pickUpMixer: {fileID: -4669352540701254758, guid: e948e6bdba26a7549ba181b7efda6278, type: 2}
+  _scrollSound: {fileID: 8300000, guid: 3bbc3bdaf08c5394486f012baba207c0, type: 3}
+  _scrollMixer: {fileID: -9089868990162150704, guid: 3e24a4f6aae5e5145ac8ee9c5688f6f5, type: 2}
+  _timeBetweenSteps: 0.5
 --- !u!4 &170428369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47d7ca74933016148bdf91813503655d, type: 3}

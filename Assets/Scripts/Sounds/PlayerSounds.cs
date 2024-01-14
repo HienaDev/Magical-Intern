@@ -5,17 +5,21 @@ using UnityEngine.Audio;
 
 public class PlayerSounds : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] stepsSound;
-    private AudioSource audioSourceSteps;
-    [SerializeField] private AudioMixerGroup stepsMixer;
+    [SerializeField] private AudioClip[] _stepsSound;
+    private AudioSource _audioSourceSteps;
+    [SerializeField] private AudioMixerGroup _stepsMixer;
 
-    [SerializeField] private AudioClip pickUpSound;
-    private AudioSource audioSourcePickUp;
-    [SerializeField] private AudioMixerGroup pickUpMixer;
+    [SerializeField] private AudioClip _pickUpSound;
+    private AudioSource _audioSourcePickUp;
+    [SerializeField] private AudioMixerGroup _pickUpMixer;
 
-    [SerializeField] private float timeBetweenSteps;
+    [SerializeField] private AudioClip _scrollSound;
+    private AudioSource _audioSourceScroll;
+    [SerializeField] private AudioMixerGroup _scrollMixer;
 
-    private PlayerMovement playerScript;
+    [SerializeField] private float _timeBetweenSteps;
+
+    private PlayerMovement _playerScript;
 
 
 
@@ -24,20 +28,25 @@ public class PlayerSounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSourceSteps = gameObject.AddComponent<AudioSource>();
-        audioSourceSteps.outputAudioMixerGroup = stepsMixer;
-        audioSourcePickUp = gameObject.AddComponent<AudioSource>();
-        audioSourcePickUp.outputAudioMixerGroup = pickUpMixer;
+        _audioSourceSteps = gameObject.AddComponent<AudioSource>();
+        _audioSourceSteps.outputAudioMixerGroup = _stepsMixer;
 
-        audioSourcePickUp.spatialBlend = 1;
-        audioSourceSteps.spatialBlend = 1;
+        _audioSourcePickUp = gameObject.AddComponent<AudioSource>();
+        _audioSourcePickUp.outputAudioMixerGroup = _pickUpMixer;
 
-        audioSourcePickUp.volume = 0.2f;
-        audioSourceSteps.volume = 0.2f;
+        _audioSourceScroll = gameObject.AddComponent<AudioSource>();
+        _audioSourceScroll.outputAudioMixerGroup = _scrollMixer;
 
-        playerScript = GetComponent<PlayerMovement>();
+        _audioSourcePickUp.spatialBlend = 1;
+        _audioSourceSteps.spatialBlend = 1;
 
-        justStep = timeBetweenSteps;
+        _audioSourcePickUp.volume = 0.2f;
+        _audioSourceSteps.volume = 0.2f;
+        _audioSourceScroll.volume = 0.2f;
+
+        _playerScript = GetComponent<PlayerMovement>();
+
+        justStep = _timeBetweenSteps;
             
 
 
@@ -46,10 +55,10 @@ public class PlayerSounds : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - justStep > timeBetweenSteps)
+        if (Time.time - justStep > _timeBetweenSteps)
         {
             justStep = Time.time;
-            if (playerScript.GetHasSpeed())
+            if (_playerScript.GetHasSpeed())
             {
                 PlayStepsSound();
 
@@ -61,15 +70,22 @@ public class PlayerSounds : MonoBehaviour
 
     public void PlayStepsSound()
     {
-        audioSourceSteps.clip = stepsSound[Random.Range(0, stepsSound.Length)];
+        _audioSourceSteps.clip = _stepsSound[Random.Range(0, _stepsSound.Length)];
 
-        audioSourceSteps.Play();
+        _audioSourceSteps.Play();
     }
 
     public void PlayPickUpSound()
     {
-        audioSourcePickUp.clip = pickUpSound;
+        _audioSourcePickUp.clip = _pickUpSound;
 
-        audioSourcePickUp.Play();
+        _audioSourcePickUp.Play();
+    }
+
+    public void PlayScrollSound()
+    {
+        _audioSourceScroll.clip = _scrollSound;
+
+        _audioSourceScroll.Play();
     }
 }

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Color              _unselectedColor;
     [SerializeField] private Color              _selectedColor;
 
+    
+
     void Start()
     {
+        
+
         HideInteractionPanel();
         HideInventoryIcons();
         HideInventorySlots();
@@ -62,6 +67,9 @@ public class UIManager : MonoBehaviour
 
     public void SelectInventorySlot(int index)
     {
+
+        
+
         foreach (Image image in _inventorySlots)
         {
             Color color = image.color;
