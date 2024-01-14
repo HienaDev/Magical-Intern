@@ -5,13 +5,13 @@ using UnityEngine;
 public class ChangeInsignia : MonoBehaviour
 {
 
-    private bool shining;
+    private bool _shining;
 
-    [SerializeField] private Material blueBallDefault;
-    [SerializeField] private Material blueBallShining;
+    [SerializeField] private Material _blueBallDefault;
+    [SerializeField] private Material _blueBallShining;
 
-    [SerializeField] private GameObject ball;
-    private MeshRenderer ballMesh;
+    [SerializeField] private GameObject _ball;
+    private MeshRenderer _ballMesh;
 
     private AudioSource _shineSound;
     private float _defaultVolume;
@@ -21,9 +21,9 @@ public class ChangeInsignia : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shining = false;
+        _shining = false;
 
-        ballMesh = ball.GetComponent<MeshRenderer>();
+        _ballMesh = _ball.GetComponent<MeshRenderer>();
 
         _shineSound = GetComponent<AudioSource>();
         _defaultVolume = _shineSound.volume;
@@ -33,24 +33,24 @@ public class ChangeInsignia : MonoBehaviour
     void Update()
     {
 
-        if (shining && !_cauldron.GetSolved())
+        if (_shining && !_cauldron.GetSolved())
         {
             _shineSound.volume = _defaultVolume;
-            ballMesh.material = blueBallShining;
+            _ballMesh.material = _blueBallShining;
         }
         else
         {
             _shineSound.volume = 0f;
-            ballMesh.material = blueBallDefault;
+            _ballMesh.material = _blueBallDefault;
         }
 
 
-        shining = false;
+        _shining = false;
     }
 
-    public void ActivateShine() => shining = true;
+    public void ActivateShine() => _shining = true;
 
-    public Material GetMaterial() => ballMesh.material;
+    public Material GetMaterial() => _ballMesh.material;
 
 
 

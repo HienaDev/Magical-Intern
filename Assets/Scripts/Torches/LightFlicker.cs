@@ -5,39 +5,39 @@ using UnityEngine;
 public class LightFlicker : MonoBehaviour
 {
 
-    [SerializeField] private float intensityChange;
-    [SerializeField] private float timerFlicker;
-    [SerializeField] private float timerPosition;
-    [SerializeField] private float positionChange;
+    [SerializeField] private float _intensityChange;
+    [SerializeField] private float _timerFlicker;
+    [SerializeField] private float _timerPosition;
+    [SerializeField] private float _positionChange;
 
-    private float justFlicked;
-    private float justMoved;
-    private float startingIntensity;
-    private Vector3 startingPosition;
-    private Light lightTorch;
+    private float _justFlicked;
+    private float _justMoved;
+    private float _startingIntensity;
+    private Vector3 _startingPosition;
+    private Light _lightTorch;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        lightTorch = GetComponent<Light>();   
-        startingIntensity = lightTorch.intensity;
-        startingPosition = gameObject.transform.position;
+        _lightTorch = GetComponent<Light>();   
+        _startingIntensity = _lightTorch.intensity;
+        _startingPosition = gameObject.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - justFlicked > timerFlicker)
+        if (Time.time - _justFlicked > _timerFlicker)
         {
-            justFlicked = Time.time;
-            lightTorch.intensity = startingIntensity + Random.Range(-intensityChange, intensityChange);
+            _justFlicked = Time.time;
+            _lightTorch.intensity = _startingIntensity + Random.Range(-_intensityChange, _intensityChange);
         }
 
-        if (Time.time - justMoved > timerPosition)
+        if (Time.time - _justMoved > _timerPosition)
         {
-            justMoved = Time.time;
-            gameObject.transform.position = new Vector3(startingPosition.x + Random.Range(-positionChange, positionChange), startingPosition.y, startingPosition.z);
+            _justMoved = Time.time;
+            gameObject.transform.position = new Vector3(_startingPosition.x + Random.Range(-_positionChange, _positionChange), _startingPosition.y, _startingPosition.z);
         }
     }
 }

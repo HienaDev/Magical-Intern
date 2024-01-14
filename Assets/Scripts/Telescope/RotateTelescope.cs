@@ -6,49 +6,46 @@ using UnityEngine;
 public class RotateTelescope : MonoBehaviour
 {
 
-    private bool rotating;
+    private bool _rotating;
 
-    [SerializeField] private PlayerMovement playerScript;
+    [SerializeField] private PlayerMovement _playerScript;
 
-    [SerializeField] private GameObject rotateHorizontal;
-    [SerializeField] private GameObject rotateVertical;
-
-    [SerializeField] private float maxRotation;
+    [SerializeField] private GameObject _rotateHorizontal;
+    [SerializeField] private GameObject _rotateVertical;
 
     private float _verticalMouseSensitivity;
     private float _horizontalMouseSensitivity;
 
     private void Start()
     {
-        _verticalMouseSensitivity = playerScript.GetVerticalSensitivity();
-        _horizontalMouseSensitivity = playerScript.GetSensitivity();
+        _verticalMouseSensitivity = _playerScript.GetVerticalSensitivity();
+        _horizontalMouseSensitivity = _playerScript.GetSensitivity();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rotating && Input.GetKeyUp(KeyCode.E))
+        if (_rotating && Input.GetKeyUp(KeyCode.E))
         {
-            //Debug.Log("pressed");
-            rotating = false;
-            playerScript.EnableMovement();
+            _rotating = false;
+            _playerScript.EnableMovement();
         }
 
 
-        if (rotating)
+        if (_rotating)
         {
 
-            rotateHorizontal.transform.Rotate(0f, Input.GetAxis("Mouse X") * _horizontalMouseSensitivity, 0f);
+            _rotateHorizontal.transform.Rotate(0f, Input.GetAxis("Mouse X") * _horizontalMouseSensitivity, 0f);
 
 
-            rotateVertical.transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * _verticalMouseSensitivity);
+            _rotateVertical.transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * _verticalMouseSensitivity);
 
         }
     }
 
     public void ActivateRotation()
     {
-        rotating = true;
-        playerScript.DisableMovement();
+        _rotating = true;
+        _playerScript.DisableMovement();
     }
 }

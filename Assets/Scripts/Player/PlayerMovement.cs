@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _maxHeadUpAngle;
     [SerializeField] private float _minHeadDownAngle;
 
-    private bool moving;
-    private bool hasSpeed;
+    private bool _moving;
+    private bool _hasSpeed;
 
     private CharacterController _characterController;
     private Transform           _head;
@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
         _head = GetComponentInChildren<CinemachineVirtualCamera>().transform;
 
-        moving = true;
-        hasSpeed = false;
+        _moving = true;
+        _hasSpeed = false;
 
     }
 
@@ -53,14 +53,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateRotation()
     {
-        if (moving)
+        if (_moving)
         {
             UpdatePlayerRotation();
             UpdateHeadRotation();
             Move();
         }
         else
-            hasSpeed = false;
+            _hasSpeed = false;
         
     }
 
@@ -92,10 +92,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (x != 0 || z != 0)
         {
-            hasSpeed = true;
+            _hasSpeed = true;
         }
         else
-            hasSpeed = false;
+            _hasSpeed = false;
 
         Vector3 move = transform.right * z + transform.forward * x;
 
@@ -108,9 +108,9 @@ public class PlayerMovement : MonoBehaviour
         _verticalMouseSensitivity   = sensitivity;
     }
 
-    public void EnableMovement() => moving = true;
+    public void EnableMovement() => _moving = true;
 
-    public void DisableMovement() => moving = false;
+    public void DisableMovement() => _moving = false;
 
     public float GetSensitivity()
     {
@@ -122,15 +122,6 @@ public class PlayerMovement : MonoBehaviour
         return _verticalMouseSensitivity;
     }
 
-    public bool GetHasSpeed() => hasSpeed;
+    public bool GetHasSpeed() => _hasSpeed;
 
-    //private void FixedUpdate()
-    //{
-    //    float x = Input.GetAxis("Forward") * 0.1f;
-    //    float z = Input.GetAxis("Strafe") * 0.1f;
-
-    //    Vector3 move = transform.right * z + transform.forward * x;
-
-    //    _characterController.Move(move);
-    //}
 }

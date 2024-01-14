@@ -13078,7 +13078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194564748c9109a4d8b6b027fd0fcf2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tickingSounds:
+  _tickingSounds:
   - {fileID: 8300000, guid: 59eea68d7091f0a4e8ed83135c14c744, type: 3}
   - {fileID: 8300000, guid: d90442e46a6b8f645bd58cbe9ee74b0d, type: 3}
   - {fileID: 8300000, guid: 9badfc845d3abca49af684a1c725940e, type: 3}
@@ -19123,10 +19123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a6b6cc6d92f154abb92a15aa30c4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityChange: 0.02
-  timerFlicker: 0.1
-  timerPosition: 0.2
-  positionChange: 0.01
+  _intensityChange: 0.02
+  _timerFlicker: 0.1
+  _timerPosition: 0.2
+  _positionChange: 0.01
 --- !u!4 &598389276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cfa297024b5a3ba448787e3d4b3c618f, type: 3}
@@ -32839,10 +32839,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a6b6cc6d92f154abb92a15aa30c4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityChange: 0.02
-  timerFlicker: 0.1
-  timerPosition: 0.2
-  positionChange: 0.01
+  _intensityChange: 0.02
+  _timerFlicker: 0.1
+  _timerPosition: 0.2
+  _positionChange: 0.01
 --- !u!1001 &758291752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33176,10 +33176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a6b6cc6d92f154abb92a15aa30c4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityChange: 0.02
-  timerFlicker: 0.1
-  timerPosition: 0.2
-  positionChange: 0.01
+  _intensityChange: 0.02
+  _timerFlicker: 0.1
+  _timerPosition: 0.2
+  _positionChange: 0.01
 --- !u!4 &796059564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9676c006415629a44893f719293727df, type: 3}
@@ -34376,9 +34376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5045b66357521428c6c49033d1ed28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueBallDefault: {fileID: 2100000, guid: 2530cbaeec1cee24980ec498e4cf3ff2, type: 2}
-  blueBallShining: {fileID: 2100000, guid: 8a52e6dccd310d741b513c38e462cfb9, type: 2}
-  ball: {fileID: 848051619}
+  _blueBallDefault: {fileID: 2100000, guid: 2530cbaeec1cee24980ec498e4cf3ff2, type: 2}
+  _blueBallShining: {fileID: 2100000, guid: 8a52e6dccd310d741b513c38e462cfb9, type: 2}
+  _ball: {fileID: 848051619}
   _cauldron: {fileID: 1712892187}
 --- !u!82 &866544570
 AudioSource:
@@ -35085,10 +35085,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a6b6cc6d92f154abb92a15aa30c4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityChange: 0.02
-  timerFlicker: 0.1
-  timerPosition: 0.2
-  positionChange: 0.01
+  _intensityChange: 0.02
+  _timerFlicker: 0.1
+  _timerPosition: 0.2
+  _positionChange: 0.01
 --- !u!1 &877479426
 GameObject:
   m_ObjectHideFlags: 0
@@ -38565,7 +38565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0245941e70702704d8a994ae4b8ce1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insigniaMask:
+  _insigniaMask:
     serializedVersion: 2
     m_Bits: 128
 --- !u!1001 &1013588104
@@ -57328,10 +57328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a6b6cc6d92f154abb92a15aa30c4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityChange: 0.02
-  timerFlicker: 0.1
-  timerPosition: 0.2
-  positionChange: 0.01
+  _intensityChange: 0.02
+  _timerFlicker: 0.1
+  _timerPosition: 0.2
+  _positionChange: 0.01
 --- !u!1 &1590330974
 GameObject:
   m_ObjectHideFlags: 0
@@ -59581,10 +59581,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a6b6cc6d92f154abb92a15aa30c4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityChange: 0.02
-  timerFlicker: 0.1
-  timerPosition: 0.2
-  positionChange: 0.01
+  _intensityChange: 0.02
+  _timerFlicker: 0.1
+  _timerPosition: 0.2
+  _positionChange: 0.01
 --- !u!1 &1681626088
 GameObject:
   m_ObjectHideFlags: 0
@@ -63489,10 +63489,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a6b6cc6d92f154abb92a15aa30c4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityChange: 0.02
-  timerFlicker: 0.1
-  timerPosition: 0.2
-  positionChange: 0.01
+  _intensityChange: 0.02
+  _timerFlicker: 0.1
+  _timerPosition: 0.2
+  _positionChange: 0.01
 --- !u!1001 &1847198266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71113,10 +71113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438ca1a2083968c4ebfad15dc043e88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 169859997}
-  rotateHorizontal: {fileID: 662220191332700971}
-  rotateVertical: {fileID: 1770128232864340379}
-  maxRotation: 70
+  _playerScript: {fileID: 169859997}
+  _rotateHorizontal: {fileID: 662220191332700971}
+  _rotateVertical: {fileID: 1770128232864340379}
 --- !u!65 &1957739761
 BoxCollider:
   m_ObjectHideFlags: 0

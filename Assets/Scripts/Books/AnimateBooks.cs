@@ -16,14 +16,14 @@ public class AnimateBooks : MonoBehaviour
     private Vector3 _auxPosition;
 
     private Vector3 _newPosition;
-    private bool swapping;
+    private bool _swapping;
 
     private BoxCollider _collider;
 
-    private bool goingUp;
+    private bool _goingUp;
 
-    private float rotation;
-    private int rotations;
+    private float _rotation;
+    private int _rotations;
 
     [SerializeField] private UnityEvent _bookSelect;
 
@@ -37,22 +37,22 @@ public class AnimateBooks : MonoBehaviour
 
         _auxPosition = transform.localPosition;
 
-        swapping = false;
+        _swapping = false;
 
         _collider = GetComponent<BoxCollider>();
 
-        goingUp = true;
+        _goingUp = true;
 
-        rotation = 0.2f;
+        _rotation = 0.2f;
 
-        rotations = 0;
+        _rotations = 0;
 
         _floatingSound = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
     {
-        _floatingSound.enabled = swapping;
+        _floatingSound.enabled = _swapping;
 
         if (_selected)
         {
@@ -66,7 +66,7 @@ public class AnimateBooks : MonoBehaviour
             Floating();
         }
 
-        if (swapping)
+        if (_swapping)
         {
 
             Floating();
@@ -78,7 +78,7 @@ public class AnimateBooks : MonoBehaviour
                 if (_auxPosition.z > _newPosition.z)
                 {
                     _auxPosition.x = _initialPositionX;
-                    swapping = false;
+                    _swapping = false;
                     _collider.enabled = true;
                 }
             }
@@ -89,14 +89,14 @@ public class AnimateBooks : MonoBehaviour
                 if (_auxPosition.z < _newPosition.z)
                 {
                     _auxPosition.x = _initialPositionX;
-                    swapping = false;
+                    _swapping = false;
                     _collider.enabled = true;
                 }
             }
             else
             {
                 
-                swapping = false;
+                _swapping = false;
                 
             }
         }
@@ -117,7 +117,7 @@ public class AnimateBooks : MonoBehaviour
     {
 
         _auxPosition.x -= 0.1f;
-        swapping = true;
+        _swapping = true;
         this._newPosition = _newPosition.localPosition;
 
         _collider.enabled = false;
@@ -127,31 +127,31 @@ public class AnimateBooks : MonoBehaviour
     public void Floating()
     {
 
-        if (_auxPosition.y < _initialPositionY + _floatingHeight && goingUp)
+        if (_auxPosition.y < _initialPositionY + _floatingHeight && _goingUp)
         {
             _auxPosition.y += _floatingSpeed;
         }
         else
         {
-            goingUp = false;
+            _goingUp = false;
         }
 
-        if (_auxPosition.y > _initialPositionY - _floatingHeight && !goingUp)
+        if (_auxPosition.y > _initialPositionY - _floatingHeight && !_goingUp)
         {
             _auxPosition.y -= _floatingSpeed;
         }
         else
         {
-            goingUp = true;
+            _goingUp = true;
         }
 
-        rotations++;
+        _rotations++;
 
        
-        transform.Rotate(0f, 0f, rotation);
+        transform.Rotate(0f, 0f, _rotation);
 
-        if (rotations % 10 == 9)
-            rotation *= -1;
+        if (_rotations % 10 == 9)
+            _rotation *= -1;
     }
  
 }

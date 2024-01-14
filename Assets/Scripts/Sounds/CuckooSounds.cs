@@ -5,13 +5,13 @@ using UnityEngine;
 public class CuckooSounds : MonoBehaviour
 {
 
-    [SerializeField] private AudioClip[] tickingSounds;
-    private AudioSource audioSource;
+    [SerializeField] private AudioClip[] _tickingSounds;
+    private AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,8 +22,8 @@ public class CuckooSounds : MonoBehaviour
 
     public void PlayTickingSound()
     {
-        audioSource.clip = tickingSounds[Random.Range(0, tickingSounds.Length)];
+        _audioSource.clip = _tickingSounds[Random.Range(0, _tickingSounds.Length)];
 
-        audioSource.Play();
+        _audioSource.Play();
     }
 }
