@@ -20,4 +20,4 @@ MonoBehaviour:
   requirements: []
   requirementsMessage: 
   interactionMessages:
-  - Hold to move
+  - Hold E to move

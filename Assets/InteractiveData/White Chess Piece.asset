@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c6e75bb832ef1b40bd68021cd0db586, type: 3}
-  m_Name: ClockHoursHand
+  m_Name: White Chess Piece
   m_EditorClassIdentifier: 
-  type: 2
+  type: 0
   startsOn: 1
   usable: 0
-  inventoryName: 
-  inventoryIcon: {fileID: 0}
+  inventoryName: white chess piece
+  inventoryIcon: {fileID: 21300000, guid: 0dc927576c35f9541ad708f8269f8ae4, type: 3}
   requirements: []
   requirementsMessage: 
   interactionMessages:
-  - Press E to move hand
+  - Press E to pick up %

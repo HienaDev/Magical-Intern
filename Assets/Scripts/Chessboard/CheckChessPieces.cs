@@ -8,10 +8,11 @@ public class CheckChessPieces : MonoBehaviour
     [SerializeField] private GameObject      _chessPiece;
     [SerializeField] private Material        _material;
     [SerializeField] private UnityEvent      _rightPiece;
+    [SerializeField] private string pieceColor;
 
     public void CheckCorrectPiece()
     {
-        if (_playerInventory.GetSelected()?.GetInteractiveName() == "ChessPiece" )
+        if (_playerInventory.GetSelected()?.GetInteractiveName() == $"{pieceColor} Chess Piece" )
         {
             _playerInventory.Remove(_playerInventory.GetSelected());
 

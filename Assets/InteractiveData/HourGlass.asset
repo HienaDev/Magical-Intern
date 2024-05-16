@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
+  usable: 0
   inventoryName: hourglass
   inventoryIcon: {fileID: 21300000, guid: 2ad7962588630ed4eb5ca38a0f7dab61, type: 3}
   requirements: []
-  requirementsMessage: Pick up
+  requirementsMessage: Press E to pick up
   interactionMessages: []

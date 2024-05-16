@@ -18,5 +18,5 @@ MonoBehaviour:
   inventoryName: magical glasses
   inventoryIcon: {fileID: 21300000, guid: 55fd04a7afbbcab49b33911380e6b8fc, type: 3}
   requirements: []
-  requirementsMessage: Pick up %
+  requirementsMessage: Press E to pick up %
   interactionMessages: []

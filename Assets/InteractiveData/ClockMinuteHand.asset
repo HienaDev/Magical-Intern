@@ -20,4 +20,4 @@ MonoBehaviour:
   requirements: []
   requirementsMessage: 
   interactionMessages:
-  - Move hand
+  - Press E to move hand

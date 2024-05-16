@@ -19,4 +19,5 @@ MonoBehaviour:
   inventoryIcon: {fileID: 0}
   requirements: []
   requirementsMessage: 
-  interactionMessages: []
+  interactionMessages:
+  - Press E to select
