@@ -75,7 +75,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void CheckForPlayerInteraction()
     {
-        if (Input.GetKeyDown(KeyCode.E) && _currentInteractive != null)
+        if ((_currentInteractive != null) && 
+        (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Mouse0)))
         {
             _currentInteractive.Interact();
             _refreshCurrentInteractive = true;
