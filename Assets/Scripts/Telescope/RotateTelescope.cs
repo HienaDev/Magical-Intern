@@ -37,9 +37,19 @@ public class RotateTelescope : MonoBehaviour
 
             _rotateHorizontal.transform.Rotate(0f, Input.GetAxis("Mouse X") * _horizontalMouseSensitivity, 0f);
 
+            if (_rotateHorizontal.transform.eulerAngles.y < 230)
+                _rotateHorizontal.transform.eulerAngles = new Vector3(_rotateHorizontal.transform.eulerAngles.x, 230, _rotateHorizontal.transform.eulerAngles.z);
+
+            if (_rotateHorizontal.transform.eulerAngles.y > 280)
+                _rotateHorizontal.transform.eulerAngles = new Vector3(_rotateHorizontal.transform.eulerAngles.x, 280, _rotateHorizontal.transform.eulerAngles.z);
 
             _rotateVertical.transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * _verticalMouseSensitivity);
 
+            if (_rotateVertical.transform.eulerAngles.z < 320)
+                _rotateVertical.transform.eulerAngles = new Vector3(_rotateVertical.transform.eulerAngles.x, _rotateVertical.transform.eulerAngles.y, 320);
+
+            if (_rotateVertical.transform.eulerAngles.z > 350)
+                _rotateVertical.transform.eulerAngles = new Vector3(_rotateVertical.transform.eulerAngles.x, _rotateVertical.transform.eulerAngles.y, 350);
         }
     }
 

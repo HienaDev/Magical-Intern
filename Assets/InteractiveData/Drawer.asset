@@ -20,4 +20,4 @@ MonoBehaviour:
   requirements: []
   requirementsMessage: 
   interactionMessages:
-  - Press E to open
+  - Press E to interact

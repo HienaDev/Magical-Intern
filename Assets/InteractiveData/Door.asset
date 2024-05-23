@@ -19,6 +19,5 @@ MonoBehaviour:
   inventoryIcon: {fileID: 0}
   requirements:
   - {fileID: 11400000, guid: 4199dee240c01c942a302eb40f965221, type: 2}
-  requirementsMessage: I need a key
-  interactionMessages:
-  - Press E to open with key
+  requirementsMessage: I need a fitting key
+  interactionMessages: []

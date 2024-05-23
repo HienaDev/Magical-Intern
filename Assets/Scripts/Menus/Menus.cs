@@ -1,5 +1,7 @@
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class Menus : MonoBehaviour
 {
@@ -15,9 +17,12 @@ public class Menus : MonoBehaviour
     [SerializeField] private GameObject               _settingsPanel;
     [SerializeField] private GameObject               _creditsPanel;
     [SerializeField] private GameObject               _pauseMenuPanel;
+    [SerializeField] private AudioSource[]            _allAudio;
+    [SerializeField] private PlayerSounds             _playerSounds;
 
     private bool _isOnMainMenu = true;
     private bool _finalCredits = false;
+    public bool _FinalCredits => _finalCredits;
 
     void Start()
     {
@@ -106,6 +111,12 @@ public class Menus : MonoBehaviour
         _creditsPanel.SetActive(true);
         _mainMenuPanel.SetActive(false);
 
+        foreach(AudioSource audio in _allAudio)
+        {
+            audio.enabled = false;
+        }
+        _playerSounds.enabled = false;
+
         if (!_isOnMainMenu)
         {
             _inGameUI.SetActive(false);
@@ -117,6 +128,12 @@ public class Menus : MonoBehaviour
     {
         _creditsPanel.SetActive(false);
         _mainMenuPanel.SetActive(true);
+
+        foreach (AudioSource audio in _allAudio)
+        {
+            audio.enabled = true;
+        }
+        _playerSounds.enabled = true;
     }
 
     public void Quit()
@@ -167,13 +184,18 @@ public class Menus : MonoBehaviour
                     PauseGame();
                 }
             }
+
         }
     }
 
     public void EndOfFinalCredits()
     {
-        _finalCredits = false;
 
+        if (_finalCredits)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        _finalCredits = false;
+        
         Debug.Log("End of final credits");
     }
 }
