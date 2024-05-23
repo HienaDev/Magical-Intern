@@ -25,7 +25,7 @@ public class RotateTelescope : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_rotating && Input.GetKeyUp(KeyCode.E))
+        if (_rotating && (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)))
         {
             _rotating = false;
             _playerScript.EnableMovement();
