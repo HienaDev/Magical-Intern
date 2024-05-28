@@ -1,40 +1,45 @@
 using UnityEngine;
+using Cinemachine;
+using System.Collections;
 
 public class UseInventoryItems : MonoBehaviour
 {
-    [SerializeField] private Interactive     _glasses;
-    [SerializeField] private Interactive     _memoryPotion;
-    [SerializeField] private PlayerInventory _playerInventory;
-    [SerializeField] private GameObject      _magicalVisionPanel;
-    [SerializeField] private GameObject      _clueSequence;
-    [SerializeField] private InteractiveData _glassesData;
-    [SerializeField] private GameObject[]    _chessPieces;
+    [SerializeField] private Interactive                _glasses;
+    [SerializeField] private Interactive                _memoryPotion;    
+    [SerializeField] private GameObject                 _magicalVisionPanel;
+    [SerializeField] private GameObject                 _clueSequence;
+    [SerializeField] private InteractiveData            _glassesData;
+    [SerializeField] private GameObject[]               _chessPieces;
+    [SerializeField] private CinemachineVirtualCamera   _mainCamera;
+    [SerializeField] private Transform                  _chessBoardTransform;
 
-    private bool _canUseGlasses = false;
-
-    private PlayerSounds _sounds;
+    private bool            _canUseGlasses;
+    private PlayerMovement  _playerMovement;
+    private PlayerInventory _playerInventory;
+    private PlayerSounds    _sounds;
 
     private void Start()
     {
-        _sounds = GetComponent<PlayerSounds>();
+        _canUseGlasses      = false;
+        _playerMovement     = GetComponent<PlayerMovement>();
+        _playerInventory    = GetComponent<PlayerInventory>();
+        _sounds             = GetComponent<PlayerSounds>();
     }
 
-    public void UseGlasses(bool canUse)
+    private void UseGlasses(bool canUse)
     {
         if (canUse)
         {
-
             if (_playerInventory.IsSelected(_glasses))
             {
                 _sounds.PlayGlassesSound();
                 _magicalVisionPanel.SetActive(!_magicalVisionPanel.activeSelf);
                 _clueSequence.SetActive(!_clueSequence.activeSelf);
             }
-
         }
     }
 
-    public void UseMemoryPotion()
+    private void UseMemoryPotion()
     {
         if (_playerInventory.IsSelected(_memoryPotion))
         {
@@ -46,6 +51,37 @@ public class UseInventoryItems : MonoBehaviour
                 cp.SetActive(true);
             }
         }
+    }
+
+    private void LookAtChessBoard()
+    {
+        StartCoroutine(RotateTowardsChessBoard());
+    }
+
+     private IEnumerator RotateTowardsChessBoard()
+    {
+        _playerMovement.enabled = false;
+        _mainCamera.LookAt = _chessBoardTransform;
+
+        float duration = 1.0f;
+        float time = 0;
+        Quaternion startRotation = transform.rotation;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            Quaternion cameraRotation = _mainCamera.transform.rotation;
+            transform.rotation = Quaternion.Slerp(startRotation, Quaternion.Euler(0, cameraRotation.eulerAngles.y, 0), time / duration);
+            yield return null;
+        }
+
+        Quaternion finalCameraRotation = _mainCamera.transform.rotation;
+        transform.rotation = Quaternion.Euler(0, finalCameraRotation.eulerAngles.y, 0);
+
+        yield return new WaitForSeconds(1.0f);
+
+        _mainCamera.LookAt = null;
+        _playerMovement.enabled = true;
     }
 
     public void CanUseGlasses()
@@ -60,7 +96,10 @@ public class UseInventoryItems : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (_playerInventory.IsSelected(_memoryPotion))
+            {
                 UseMemoryPotion();
+                LookAtChessBoard();
+            }
 
             else if (_playerInventory.IsSelected(_glasses))
                 UseGlasses(_canUseGlasses);

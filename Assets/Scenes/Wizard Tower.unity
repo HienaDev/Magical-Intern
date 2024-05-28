@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.10555879, g: 0.12277096, b: 0.33917147, a: 1}
+  m_IndirectSpecularColor: {r: 0.10551707, g: 0.12271822, b: 0.33913246, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2666,7 +2666,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _glasses: {fileID: 1431681649}
   _memoryPotion: {fileID: 325795171}
-  _playerInventory: {fileID: 169860001}
   _magicalVisionPanel: {fileID: 126978251}
   _clueSequence: {fileID: 1886761694}
   _glassesData: {fileID: 11400000, guid: e14c381028c20b5499670a37c151c6c6, type: 2}
@@ -2675,6 +2674,8 @@ MonoBehaviour:
   - {fileID: 270559744}
   - {fileID: 1671757169}
   - {fileID: 1593405216}
+  _mainCamera: {fileID: 1626779802}
+  _chessBoardTransform: {fileID: 796059564}
 --- !u!114 &169860007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11869,7 +11870,19 @@ MonoBehaviour:
       m_Calls: []
   onInteracted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 325795184}
+        m_TargetAssemblyTypeName: DrinkMemoryPotion, Assembly-CSharp
+        m_MethodName: LookAtChessboard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &325795175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11992,6 +12005,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &325795184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325795168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0ed9ba574d0f3469a082387208083c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &327788734 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 052ea300c19e5e34eb1f16f6b5c0386a, type: 3}
@@ -12946,6 +12971,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8622f619d885a434e8de52a539747727, type: 3}
       insertIndex: -1
       addedObject: {fileID: 325795169}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8622f619d885a434e8de52a539747727, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 325795184}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8622f619d885a434e8de52a539747727, type: 3}
       insertIndex: -1
       addedObject: {fileID: 325795175}
