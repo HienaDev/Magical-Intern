@@ -61,9 +61,10 @@ public class UseInventoryItems : MonoBehaviour
      private IEnumerator RotateTowardsChessBoard()
     {
         _playerMovement.enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
         _mainCamera.LookAt = _chessBoardTransform;
 
-        float duration = 1.0f;
+        float duration = 2.0f;
         float time = 0;
         Quaternion startRotation = transform.rotation;
 
@@ -77,8 +78,6 @@ public class UseInventoryItems : MonoBehaviour
 
         Quaternion finalCameraRotation = _mainCamera.transform.rotation;
         transform.rotation = Quaternion.Euler(0, finalCameraRotation.eulerAngles.y, 0);
-
-        yield return new WaitForSeconds(1.0f);
 
         _mainCamera.LookAt = null;
         _playerMovement.enabled = true;
