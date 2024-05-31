@@ -60,6 +60,7 @@ public class UseInventoryItems : MonoBehaviour
 
      private IEnumerator RotateTowardsChessBoard()
     {
+        _sounds.ChangeStepSound(0f);
         _playerMovement.enabled = false;
         Cursor.lockState = CursorLockMode.Locked;
         _mainCamera.LookAt = _chessBoardTransform;
@@ -81,6 +82,7 @@ public class UseInventoryItems : MonoBehaviour
 
         _mainCamera.LookAt = null;
         _playerMovement.enabled = true;
+        _sounds.ChangeStepSound(0.2f);
     }
 
     public void CanUseGlasses()

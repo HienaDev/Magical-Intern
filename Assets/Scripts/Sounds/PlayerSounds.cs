@@ -97,6 +97,8 @@ public class PlayerSounds : MonoBehaviour
         _audioSourceSteps.Play();
     }
 
+    public void ChangeStepSound(float value) => _audioSourceSteps.volume = value;
+
     public void PlayPickUpSound() => _audioSourcePickUp.Play();
 
     public void PlayScrollSound() => _audioSourceScroll.Play();
