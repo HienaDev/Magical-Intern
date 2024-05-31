@@ -31,6 +31,8 @@ public class PlayerInventory : MonoBehaviour
 
         if (_inventory.Count == 1)
             SelectInventorySlot(0);
+
+        SelectInventorySlot(_inventory.Count - 1);
     }
 
     public void Remove(Interactive item)
