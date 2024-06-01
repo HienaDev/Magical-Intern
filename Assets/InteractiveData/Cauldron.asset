@@ -20,5 +20,5 @@ MonoBehaviour:
   requirements: []
   requirementsMessage: 
   interactionMessages:
-  - The recipe isn't ready yet
+  - All the ingredients together
   canShowTheInteractionMessageContinuously: 1

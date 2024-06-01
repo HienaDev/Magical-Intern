@@ -25,7 +25,7 @@ public class PutIngredientsOnCauldron : MonoBehaviour
                 _playerInventory.Contains(_hourglass.GetComponent<Interactive>()) &&
                 _insignia.GetMaterial().color == _shinyMaterial.color)
             {
-                _cauldronScriptable.interactionMessages[0] = "Press E to create potion";
+                _cauldronScriptable.interactionMessages[0] = "Add the ingredients";
             }
             else
             {
