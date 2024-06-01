@@ -21,3 +21,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 57906d6f2b0d28b4f84d2d674522b0df, type: 2}
   requirementsMessage: 
   interactionMessages: []
+  canShowTheInteractionMessageContinuously: 0

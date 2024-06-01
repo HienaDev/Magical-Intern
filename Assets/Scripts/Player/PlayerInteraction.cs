@@ -8,12 +8,14 @@ public class PlayerInteraction : MonoBehaviour
     private Transform   _cameraTransform;
     private Interactive _currentInteractive;
     private bool        _refreshCurrentInteractive;
+    private bool        _interactionPanelShown;
 
     void Start()
     {
         _cameraTransform            = GetComponentInChildren<Camera>().transform;
         _currentInteractive         = null;
         _refreshCurrentInteractive  = false;
+        _interactionPanelShown      = true;
     }
 
     void Update()
@@ -52,6 +54,7 @@ public class PlayerInteraction : MonoBehaviour
         _currentInteractive.SetOutline(false);
         _currentInteractive = null;
         _uiManager.HideInteractionPanel();
+        _uiManager.ShowSelectedItemCrosshair(false);
     }
 
     private void SetCurrentInteractive(Interactive interactive)
@@ -61,16 +64,26 @@ public class PlayerInteraction : MonoBehaviour
             
         _currentInteractive         = interactive;
         _refreshCurrentInteractive  = false;
+        _uiManager.ShowSelectedItemCrosshair(true);
 
         string interactionMessage = interactive.GetInteractionMessage();
 
         if (_currentInteractive != null)
             _currentInteractive.SetOutline(true);
 
-        if (interactionMessage != null && interactionMessage.Length > 0)
+        if ((_interactionPanelShown && 
+            interactionMessage != null && 
+            interactionMessage.Length > 0) || 
+            (interactive.interactiveData.canShowTheInteractionMessageContinuously
+             && interactionMessage != null && 
+             interactionMessage.Length > 0))
+        {
             _uiManager.ShowInteractionPanel(interactionMessage);
+        }
         else
+        {
             _uiManager.HideInteractionPanel();
+        }
     }
 
     private void CheckForPlayerInteraction()
@@ -80,6 +93,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             _currentInteractive.Interact();
             _refreshCurrentInteractive = true;
+            _interactionPanelShown = false;
         }
     }
 

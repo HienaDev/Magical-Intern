@@ -13,13 +13,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image[]            _inventoryIcons;
     [SerializeField] private Color              _unselectedColor;
     [SerializeField] private Color              _selectedColor;
-
+    [SerializeField] private Image              _inventorySelectedItemCrosshair;
     
 
     void Start()
     {
-        
-
         HideInteractionPanel();
         HideInventoryIcons();
         HideInventorySlots();
@@ -110,5 +108,10 @@ public class UIManager : MonoBehaviour
             
             _inventoryUsableItem.SetActive(true);
         }
+    }
+
+    public void ShowSelectedItemCrosshair(bool show)
+    {
+        _inventorySelectedItemCrosshair.enabled = show;
     }
 }

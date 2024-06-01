@@ -20,4 +20,5 @@ MonoBehaviour:
   requirements: []
   requirementsMessage: 
   interactionMessages:
-  - Press E to interact
+  - Press E or Click to interact
+  canShowTheInteractionMessageContinuously: 0

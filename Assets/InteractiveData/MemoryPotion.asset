@@ -19,4 +19,6 @@ MonoBehaviour:
   inventoryIcon: {fileID: 21300000, guid: 7fd4af9bd2eaa324e987913252fb966e, type: 3}
   requirements: []
   requirementsMessage: 
-  interactionMessages: []
+  interactionMessages:
+  - Press E or Click to interact
+  canShowTheInteractionMessageContinuously: 0

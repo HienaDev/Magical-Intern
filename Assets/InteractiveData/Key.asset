@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   startsOn: 1
+  usable: 0
   inventoryName: key
   inventoryIcon: {fileID: 21300000, guid: dcefedb1a2b276c4ebc0d2184f19c158, type: 3}
   requirements: []
   requirementsMessage: 
-  interactionMessages: []
+  interactionMessages:
+  - Press E or Click to interact
+  canShowTheInteractionMessageContinuously: 0

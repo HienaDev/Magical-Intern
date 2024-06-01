@@ -21,3 +21,4 @@ MonoBehaviour:
   requirementsMessage: 
   interactionMessages:
   - Hold E to move
+  canShowTheInteractionMessageContinuously: 1
