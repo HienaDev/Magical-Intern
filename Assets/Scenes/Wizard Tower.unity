@@ -369,7 +369,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.06559595, z: 0.21458551}
+  m_Size: {x: 1, y: 0.04480323, z: 0.21458551}
   m_Center: {x: 0, y: -0.033717785, z: -0.006887166}
 --- !u!114 &6062458
 MonoBehaviour:
@@ -405,7 +405,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8, y: 0.48995835, z: 0.047386862}
+  m_Size: {x: 0.8, y: 0.48995835, z: 0}
   m_Center: {x: 0, y: 0.20131136, z: -0.0763075}
 --- !u!1 &9059830
 GameObject:
@@ -762,8 +762,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.88148475, z: 0.5565727}
-  m_Center: {x: 0, y: -0.059257627, z: -0.2217139}
+  m_Size: {x: 1.0007099, y: 0.88148475, z: 0.5565727}
+  m_Center: {x: 0.00035494566, y: -0.059257627, z: -0.2217139}
 --- !u!4 &43217658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3cef4da4cd5f2f840b649491fd6f4a8f, type: 3}
@@ -1266,8 +1266,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.065595955, z: 0.21458551}
-  m_Center: {x: 0, y: -0.035726756, z: -0.006887166}
+  m_Size: {x: 1, y: 0.04480323, z: 0.21458551}
+  m_Center: {x: 0, y: -0.046123203, z: -0.0068871654}
 --- !u!114 &77548374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,7 +1302,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8, y: 0.48995835, z: 0.047386862}
+  m_Size: {x: 0.8, y: 0.48995835, z: 0}
   m_Center: {x: 0, y: 0.20131136, z: -0.0763075}
 --- !u!1 &85056377
 GameObject:
@@ -14639,7 +14639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3cef4da4cd5f2f840b649491fd6f4a8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.834
+      value: 0.836
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3cef4da4cd5f2f840b649491fd6f4a8f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18328,7 +18328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0931
+      value: -0.0458
       objectReference: {fileID: 0}
     - target: {fileID: 8667927687065449799, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51296,7 +51296,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.06559595, z: 0.21458551}
+  m_Size: {x: 1, y: 0.04480323, z: 0.21458551}
   m_Center: {x: 0, y: -0.039647337, z: -0.006887166}
 --- !u!82 &1440703331
 AudioSource:
@@ -51428,8 +51428,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8, y: 0.48995835, z: 0.047386862}
-  m_Center: {x: 0, y: 0.20131136, z: -0.0763075}
+  m_Size: {x: 0.8, y: 0.48995835, z: 0}
+  m_Center: {x: 0, y: 0.20131136, z: -0.10000151}
 --- !u!4 &1446712481 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47d7ca74933016148bdf91813503655d, type: 3}
