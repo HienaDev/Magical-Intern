@@ -2571,7 +2571,6 @@ GameObject:
   - component: {fileID: 169859997}
   - component: {fileID: 169860002}
   - component: {fileID: 169860001}
-  - component: {fileID: 169860004}
   - component: {fileID: 169860005}
   - component: {fileID: 169860007}
   m_Layer: 2
@@ -2746,24 +2745,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &169860004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169859992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f441bd29af86f5b4384c7bd5f4250809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _glasses: {fileID: 156762914}
-  _chessPiece: {fileID: 7790895170177644843}
-  _cheese: {fileID: 1658163455}
-  _hourglass: {fileID: 1002742630}
-  _key: {fileID: 115417393}
-  _memoryPotion: {fileID: 325795168}
 --- !u!114 &169860005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14692,6 +14673,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3cef4da4cd5f2f840b649491fd6f4a8f, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1182740767}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3cef4da4cd5f2f840b649491fd6f4a8f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 322884763}
@@ -45006,6 +44990,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf4a01818df6b934689d41113d0a2241, type: 3}
+--- !u!1 &1182740766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1182740767}
+  - component: {fileID: 1182740768}
+  m_Layer: 2
+  m_Name: Upper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1182740767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182740766}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 43217658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1182740768
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182740766}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9303988, y: 0.018170983, z: 0.48605412}
+  m_Center: {x: 0.0026327372, y: 0.37846762, z: -0.1873595}
 --- !u!1 &1182841268
 GameObject:
   m_ObjectHideFlags: 0
@@ -78484,11 +78521,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3822880812570228339}
   m_CullTransparentMesh: 1
---- !u!1 &7790895170177644843 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7790895171187744254, guid: 0d38af55d2d3aff4b8d36c2bf7086d10, type: 3}
-  m_PrefabInstance: {fileID: 1145906389}
-  m_PrefabAsset: {fileID: 0}
 --- !u!222 &7827283815135957703
 CanvasRenderer:
   m_ObjectHideFlags: 0
