@@ -19,7 +19,11 @@ public class Settings : MonoBehaviour
 
     private void Start()
     {   
-        _resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
+        _resolutions = Screen.resolutions
+            .Where(resolution => Mathf.Approximately((float)resolution.width / resolution.height, 16f / 9f))
+            .Select(resolution => new Resolution { width = resolution.width, height = resolution.height })
+            .Distinct()
+            .ToArray();
 
         _resolutionDropdown.ClearOptions();
 
